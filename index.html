@@ -8,28 +8,59 @@
   <title>Team iRobot — Roombaを、もっと知る。もっと楽しむ。</title>
   <link rel="preconnect" href="https://www.irobot-jp.com">
   <link rel="stylesheet" href="./styles.css?v=20260922-1950">
+
+  <style id="intro-critical-css">
+    #siteIntro.site-intro-roomba{position:fixed!important;inset:0!important;z-index:99999!important;background:#f7f7f5!important;overflow:hidden!important;display:block!important;opacity:1;visibility:visible;transition:opacity .42s ease,visibility .42s ease}
+    #siteIntro.site-intro-roomba.is-done{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+    #siteIntro .intro-roomba-stage{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important}
+    #siteIntro .intro-roomba-slot{position:absolute!important;bottom:-220px!important;opacity:0;animation:tiRise .9s cubic-bezier(.16,.84,.28,1) forwards!important;will-change:transform,opacity}
+    #siteIntro .intro-roomba-slot img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important}
+    #siteIntro .intro-roomba-slot.is-fallback img{display:none!important}
+    #siteIntro .intro-roomba-slot.is-fallback:before{content:"";position:absolute;inset:12%;border-radius:50%;background:#25292a;box-shadow:inset 0 0 0 10px #34393a,0 18px 28px rgba(0,0,0,.12)}
+    #siteIntro .intro-roomba-slot.is-fallback:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#0ca678;left:50%;top:50%;transform:translate(-50%,-50%)}
+    #siteIntro .intro-roomba-slot span{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);font:900 8px/1 system-ui,sans-serif;letter-spacing:.12em;color:#6d7476;white-space:nowrap}
+    #siteIntro .r1{width:108px!important;height:108px!important;left:-3%!important;animation-delay:.05s!important}
+    #siteIntro .r2{width:132px!important;height:132px!important;left:11%!important;animation-delay:.28s!important}
+    #siteIntro .r3{width:174px!important;height:174px!important;left:29%!important;animation-delay:.51s!important}
+    #siteIntro .r4{width:144px!important;height:144px!important;left:56%!important;animation-delay:.74s!important}
+    #siteIntro .r5{width:162px!important;height:162px!important;left:72%!important;animation-delay:.97s!important}
+    #siteIntro .intro-roomba-title{position:absolute!important;left:50%!important;bottom:11vh!important;transform:translateX(-50%) translateY(12px)!important;text-align:center!important;opacity:0;animation:tiTitle .35s ease forwards!important;animation-delay:1.85s!important}
+    #siteIntro .intro-roomba-title small{display:block!important;font:800 8px/1.2 system-ui,sans-serif!important;letter-spacing:.16em!important;color:#747b7d!important;margin-bottom:7px!important}
+    #siteIntro .intro-roomba-title strong{display:block!important;font:900 40px/.9 system-ui,sans-serif!important;letter-spacing:-.055em!important;color:#111!important}
+    @keyframes tiRise{0%{opacity:0;transform:translateY(0) scale(.78)}60%{opacity:1;transform:translateY(-40vh) scale(1.05)}100%{opacity:1;transform:translateY(-38vh) scale(1)}}
+    @keyframes tiTitle{to{opacity:1;transform:translateX(-50%) translateY(0)}}
+    @media(min-width:901px){
+      #siteIntro .r1{width:180px!important;height:180px!important;left:1%!important}
+      #siteIntro .r2{width:220px!important;height:220px!important;left:18%!important}
+      #siteIntro .r3{width:290px!important;height:290px!important;left:39%!important}
+      #siteIntro .r4{width:235px!important;height:235px!important;left:62%!important}
+      #siteIntro .r5{width:265px!important;height:265px!important;left:78%!important}
+      #siteIntro .intro-roomba-title strong{font-size:64px!important}
+      @keyframes tiRise{0%{opacity:0;transform:translateY(0) scale(.8)}60%{opacity:1;transform:translateY(-46vh) scale(1.04)}100%{opacity:1;transform:translateY(-43vh) scale(1)}}
+    }
+  </style>
 </head>
 <body>
   <div class="site-intro site-intro-roomba" id="siteIntro" aria-hidden="true">
     <div class="intro-roomba-stage">
       <div class="intro-roomba-slot r1">
-        <img src="https://www.irobot-jp.com/product/img/family/260219/roomba-min-sc_wh.png" alt="">
+        <img src="https://www.irobot-jp.com/product/img/family/260219/roomba-min-sc_wh.png" alt="" onerror="this.parentElement.classList.add('is-fallback')">
         <span>MINI</span>
       </div>
       <div class="intro-roomba-slot r2">
-        <img src="https://store.irobot-jp.com/client_info/FS/itemimage/Y351060.jpg" alt="">
+        <img src="https://store.irobot-jp.com/client_info/FS/itemimage/Y351060.jpg" alt="" onerror="this.parentElement.classList.add('is-fallback')">
         <span>105</span>
       </div>
       <div class="intro-roomba-slot r3">
-        <img src="https://www.irobot.co.uk/dw/image/v2/BFXP_PRD/on/demandware.static/-/Library-Sites-iRobotSharedLibrary/default/dw466c504b/EMEA/2026/615/Roomba_Plus_615_Combo_WashOnly_Black_Photo_In-situ_PowerSpinRollerMop_DTC_3000x3000.jpg?fmt=auto&sw=1000" alt="">
+        <img src="https://www.irobot.co.uk/dw/image/v2/BFXP_PRD/on/demandware.static/-/Library-Sites-iRobotSharedLibrary/default/dw466c504b/EMEA/2026/615/Roomba_Plus_615_Combo_WashOnly_Black_Photo_In-situ_PowerSpinRollerMop_DTC_3000x3000.jpg?fmt=auto&sw=1000" alt="" onerror="this.parentElement.classList.add('is-fallback')">
         <span>PLUS 615</span>
       </div>
       <div class="intro-roomba-slot r4">
-        <img src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-715-ae-image.png" alt="">
+        <img src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-715-ae-image.png" alt="" onerror="this.parentElement.classList.add('is-fallback')">
         <span>MAX 715</span>
       </div>
       <div class="intro-roomba-slot r5">
-        <img src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-775-aw-image.png" alt="">
+        <img src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-775-aw-image.png" alt="" onerror="this.parentElement.classList.add('is-fallback')">
         <span>MAX 775</span>
       </div>
     </div>
@@ -38,6 +69,16 @@
       <strong>READY.</strong>
     </div>
   </div>
+  <script>
+    (function(){
+      var intro=document.getElementById('siteIntro');
+      if(!intro)return;
+      var done=false;
+      function finish(){if(done)return;done=true;intro.classList.add('is-done');setTimeout(function(){intro.remove();},500);}
+      setTimeout(finish,3000);
+      window.addEventListener('pageshow',function(){setTimeout(finish,3000)},{once:true});
+    })();
+  </script>
   <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Team iRobot ホーム">
@@ -262,6 +303,6 @@
     <small>© 2026 Team iRobot. Unofficial fan community.</small>
   </footer>
 
-  <script src="./data.js"></script><script src="./app.js"></script>
+  <script src="./data.js"></script><script src="./app.js?v=20260922-1956"></script>
 </body>
 </html>
