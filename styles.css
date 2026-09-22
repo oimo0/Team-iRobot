@@ -642,3 +642,19 @@ img{max-width:100%;display:block}
   min-height:auto!important;
 }
 .community-art{display:none!important}
+
+
+/* --- Team credits --- */
+.team-credits{padding:58px 0 24px;border-top:1px solid var(--line)}
+.credit-grid{margin-top:22px;border-top:1px solid var(--line)}
+.credit-row{display:grid;grid-template-columns:210px 1fr auto;align-items:center;gap:22px;padding:20px 0;border-bottom:1px solid var(--line)}
+.credit-row span{font-size:8px;font-weight:900;letter-spacing:.13em;color:var(--muted)}
+.credit-row strong{font-size:12px;font-weight:650;color:#555d5f}
+.credit-row b{font-size:16px;letter-spacing:-.02em}
+@media(max-width:620px){
+ .team-credits{padding-top:46px}
+ .credit-row{grid-template-columns:1fr auto;gap:6px 14px}
+ .credit-row span{grid-column:1/-1}
+ .credit-row strong{font-size:11px}
+ .credit-row b{font-size:15px}
+}
