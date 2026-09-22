@@ -564,3 +564,73 @@ img{max-width:100%;display:block}
    max-width:34px!important;max-height:34px!important;
  }
 }
+
+
+/* --- Roomba lineup startup intro / 2026-09-22 --- */
+.site-intro-roomba{
+  position:fixed;inset:0;z-index:1000;background:#f7f7f5;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .45s cubic-bezier(.22,.61,.36,1),visibility .45s;
+}
+.site-intro-roomba.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.intro-roomba-stage{position:relative;width:min(1200px,100vw);height:100vh;overflow:hidden}
+.intro-roomba-slot{
+  position:absolute;bottom:-48vh;opacity:0;
+  animation:roombaPop 1s cubic-bezier(.16,.84,.28,1) forwards;
+  will-change:transform,opacity;
+}
+.intro-roomba-slot img{
+  width:100%;height:100%;object-fit:contain;display:block;
+  filter:drop-shadow(0 18px 28px rgba(0,0,0,.14));
+}
+.intro-roomba-slot span{
+  position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);
+  font-size:9px;font-weight:900;letter-spacing:.14em;color:#697072;white-space:nowrap;
+}
+.intro-roomba-slot.r1{width:190px;height:190px;left:2%;animation-delay:.05s}
+.intro-roomba-slot.r2{width:230px;height:230px;left:18%;animation-delay:.35s}
+.intro-roomba-slot.r3{width:300px;height:300px;left:39%;animation-delay:.65s}
+.intro-roomba-slot.r4{width:240px;height:240px;left:62%;animation-delay:.95s}
+.intro-roomba-slot.r5{width:275px;height:275px;left:78%;animation-delay:1.25s}
+.intro-roomba-title{
+  position:absolute;left:50%;bottom:7vh;transform:translateX(-50%) translateY(15px);
+  text-align:center;opacity:0;animation:introReady .45s ease forwards;animation-delay:2.15s;
+}
+.intro-roomba-title small{display:block;font-size:10px;letter-spacing:.18em;font-weight:850;color:#777f81;margin-bottom:8px}
+.intro-roomba-title strong{font-size:clamp(36px,6vw,76px);line-height:.9;letter-spacing:-.06em}
+@keyframes roombaPop{
+  0%{opacity:0;transform:translateY(0) scale(.82) rotate(-2deg)}
+  62%{opacity:1;transform:translateY(-44vh) scale(1.04) rotate(1deg)}
+  100%{opacity:1;transform:translateY(-41vh) scale(1) rotate(0)}
+}
+@keyframes introReady{to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+@media(max-width:900px){
+ .intro-roomba-stage{width:100vw}
+ .intro-roomba-slot.r1{width:120px;height:120px;left:-3%;animation-delay:.04s}
+ .intro-roomba-slot.r2{width:145px;height:145px;left:11%;animation-delay:.28s}
+ .intro-roomba-slot.r3{width:190px;height:190px;left:31%;animation-delay:.52s}
+ .intro-roomba-slot.r4{width:155px;height:155px;left:57%;animation-delay:.76s}
+ .intro-roomba-slot.r5{width:175px;height:175px;left:72%;animation-delay:1s}
+ .intro-roomba-slot span{font-size:7px;bottom:-13px}
+ @keyframes roombaPop{
+   0%{opacity:0;transform:translateY(0) scale(.8)}
+   60%{opacity:1;transform:translateY(-36vh) scale(1.05)}
+   100%{opacity:1;transform:translateY(-34vh) scale(1)}
+ }
+ .intro-roomba-title{bottom:11vh}
+ .intro-roomba-title strong{font-size:44px}
+}
+@media(max-width:560px){
+ .intro-roomba-slot.r1{width:105px;height:105px;left:-5%}
+ .intro-roomba-slot.r2{width:126px;height:126px;left:10%}
+ .intro-roomba-slot.r3{width:168px;height:168px;left:28%}
+ .intro-roomba-slot.r4{width:137px;height:137px;left:55%}
+ .intro-roomba-slot.r5{width:155px;height:155px;left:70%}
+ .intro-roomba-title{bottom:12vh}
+ .intro-roomba-title small{font-size:8px}
+ .intro-roomba-title strong{font-size:40px}
+}
+@media(prefers-reduced-motion:reduce){
+ .site-intro-roomba{display:none!important}
+}
