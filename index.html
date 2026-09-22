@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <div class="site-intro" id="siteIntro" aria-hidden="true">
+    <div class="intro-mark"><span class="brand-dot"></span><strong>Team iRobot</strong></div>
+    <div class="intro-line"><span></span></div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Team iRobot ホーム">
       <span class="brand-dot" aria-hidden="true"></span>
@@ -43,13 +48,19 @@
           <h1>Roombaを、<br>もっと知る。<br>もっと楽しむ。</h1>
           <p class="hero-copy">製品情報、ニュース、使い方、トラブル解決。Team iRobotは、ルンバ好きが集まる非公式ファンコミュニティです。</p>
         </div>
-        <div class="hero-orbit" aria-hidden="true">
-          <div class="orbit-ring ring-a"></div>
-          <div class="orbit-ring ring-b"></div>
-          <div class="robot-disc"><span></span></div>
-          <div class="route route-a"></div>
-          <div class="route route-b"></div>
-        </div>
+        <a class="hero-product-stage" id="heroProductStage" href="https://store.irobot-jp.com/item/X285060.html" target="_blank" rel="noopener" aria-label="Roomba Max 775 Combo 公式製品ページ">
+          <div class="hero-halo halo-a" aria-hidden="true"></div>
+          <div class="hero-halo halo-b" aria-hidden="true"></div>
+          <div class="hero-route route-one" aria-hidden="true"></div>
+          <div class="hero-route route-two" aria-hidden="true"></div>
+          <div class="hero-product-copy">
+            <span>LATEST FLAGSHIP / 2026</span>
+            <strong>Roomba Max 775 Combo</strong>
+            <small>PowerSpin™ / PrecisionVision™ AI / AutoWash™</small>
+          </div>
+          <img id="heroProductImage" src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-775-aw-image.png" alt="Roomba Max 775 Combo ロボット + AutoWash 充電ステーション">
+          <span class="hero-product-cta">VIEW PRODUCT ↗</span>
+        </a>
       </div>
 
       <div class="ticker" aria-label="注目情報">
