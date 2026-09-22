@@ -490,3 +490,29 @@ img{max-width:100%;display:block}
   .timeline-row>div:before{left:-28px!important;top:6px!important}
   .timeline-row>div{padding-left:22px}
 }
+
+
+/* --- Mobile header logo size hotfix --- */
+@media(max-width:900px){
+  .site-header .brand-logo-img{
+    width:32px!important;
+    height:32px!important;
+    max-width:32px!important;
+    max-height:32px!important;
+    object-fit:cover!important;
+    border-radius:50%!important;
+  }
+  .site-header .brand{
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+  }
+}
+@media(max-width:560px){
+  .site-header .brand-logo-img{
+    width:30px!important;
+    height:30px!important;
+    max-width:30px!important;
+    max-height:30px!important;
+  }
+}
