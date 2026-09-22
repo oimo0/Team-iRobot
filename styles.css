@@ -463,3 +463,30 @@ img{max-width:100%;display:block}
   .timeline-row b{font-size:18px}
   .timeline-row p{font-size:11px}
 }
+
+
+/* --- Team iRobot polish / navigation & timeline --- */
+.brand-logo-img{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+  flex:0 0 auto;
+  transition:transform .45s cubic-bezier(.22,.61,.36,1);
+}
+.brand:hover .brand-logo-img{transform:rotate(-7deg) scale(1.06)}
+.product-card{cursor:default}
+.product-actions a:first-child{font-weight:900}
+.timeline-row>div:before{
+  left:-34px!important;
+  top:7px!important;
+}
+.timeline-row b{padding-left:0!important}
+@media(max-width:900px){
+  .timeline-row>div:before{left:-30px!important}
+}
+@media(max-width:560px){
+  .brand-logo-img{width:34px;height:34px}
+  .timeline-row>div:before{left:-28px!important;top:6px!important}
+  .timeline-row>div{padding-left:22px}
+}
