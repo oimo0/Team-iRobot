@@ -95,7 +95,10 @@ cards.forEach((_,i) => {
   b.type = "button";
   b.setAttribute("aria-label", "特集 "+(i+1));
   if(i===0) b.classList.add("is-active");
-  b.addEventListener("click", () => cards[i].scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"}));
+  b.addEventListener("click", () => {
+    const left = cards[i].offsetLeft - rail.offsetLeft;
+    rail.scrollTo({left, behavior:"smooth"});
+  });
   dotsWrap.appendChild(b);
 });
 if("IntersectionObserver" in window){
@@ -195,7 +198,8 @@ const startFeatureAutoplay = () => {
   let index = 0;
   featureTimer = setInterval(() => {
     index = (index + 1) % cards.length;
-    cards[index].scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});
+    const left = cards[index].offsetLeft - rail.offsetLeft;
+    rail.scrollTo({left, behavior:"smooth"});
   }, 5200);
 };
 ["pointerdown","touchstart","wheel"].forEach(type => rail?.addEventListener(type, () => clearInterval(featureTimer), {passive:true}));
