@@ -516,3 +516,28 @@ img{max-width:100%;display:block}
     max-height:30px!important;
   }
 }
+
+
+/* --- Logo sizing v2: source artwork is a full square illustration --- */
+.site-header .brand-logo-img{
+  width:34px!important;height:34px!important;
+  min-width:34px!important;min-height:34px!important;
+  max-width:34px!important;max-height:34px!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:50%!important;
+  clip-path:circle(50%)!important;
+}
+.intro-logo-img{
+  width:42px!important;height:42px!important;
+  min-width:42px!important;min-height:42px!important;
+  max-width:42px!important;max-height:42px!important;
+  object-fit:cover!important;object-position:center!important;
+  border-radius:50%!important;clip-path:circle(50%)!important;
+  display:block!important;
+}
+.intro-mark{display:flex!important;align-items:center!important;gap:13px!important}
+@media(max-width:560px){
+ .site-header .brand-logo-img{width:30px!important;height:30px!important;min-width:30px!important;min-height:30px!important;max-width:30px!important;max-height:30px!important}
+ .intro-logo-img{width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;max-width:38px!important;max-height:38px!important}
+}
