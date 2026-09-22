@@ -190,18 +190,6 @@ if (heroStage && heroImage && !reduceMotion) {
   });
 }
 
-const mobileCarousel = window.matchMedia("(max-width: 900px)");
-let featureTimer;
-const startFeatureAutoplay = () => {
-  clearInterval(featureTimer);
-  if (!mobileCarousel.matches || reduceMotion || cards.length < 2) return;
-  let index = 0;
-  featureTimer = setInterval(() => {
-    index = (index + 1) % cards.length;
-    const left = cards[index].offsetLeft - rail.offsetLeft;
-    rail.scrollTo({left, behavior:"smooth"});
-  }, 5200);
-};
-["pointerdown","touchstart","wheel"].forEach(type => rail?.addEventListener(type, () => clearInterval(featureTimer), {passive:true}));
-mobileCarousel.addEventListener?.("change", startFeatureAutoplay);
-startFeatureAutoplay();
+// Feature carousel is manual-only.
+ // Automatic scrolling was intentionally removed because some mobile browsers
+ // can couple horizontal programmatic scrolling with the page's vertical position.
