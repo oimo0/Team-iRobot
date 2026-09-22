@@ -17,14 +17,15 @@
   <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Team iRobot ホーム">
-      <span class="brand-dot" aria-hidden="true"></span>
+      <img class="brand-logo-img" src="./assets/team-irobot-logo.jpg" alt="">
       <span>Team iRobot</span>
     </a>
     <nav class="desktop-nav" aria-label="メインナビゲーション">
       <a href="#latest">News</a>
       <a href="#products">Products</a>
-      <a href="#compare">Compare</a>
-      <a href="#guide">Guide</a>
+      <a href="./compare.html">Compare</a>
+      <a href="./history.html">History</a>
+      <a href="./help.html">Help</a>
       <a href="#community">Community</a>
     </nav>
     <button class="menu-button" id="menuButton" type="button" aria-label="メニューを開く" aria-expanded="false">
@@ -35,8 +36,9 @@
   <div class="mobile-menu" id="mobileMenu" hidden>
     <a href="#latest">News</a>
     <a href="#products">Products</a>
-    <a href="#compare">Compare</a>
-    <a href="#guide">Guide</a>
+    <a href="./compare.html">Compare</a>
+    <a href="./history.html">History</a>
+    <a href="./help.html">Help</a>
     <a href="#community">Community</a>
   </div>
 
@@ -48,16 +50,16 @@
           <h1>Roombaを、<br>もっと知る。<br>もっと楽しむ。</h1>
           <p class="hero-copy">製品情報、ニュース、使い方、トラブル解決。Team iRobotは、ルンバ好きが集まる非公式ファンコミュニティです。</p>
         </div>
-        <a class="hero-product-stage" id="heroProductStage" href="https://store.irobot-jp.com/item/X285060.html" target="_blank" rel="noopener" aria-label="Roomba Max 775 Combo 公式製品ページ">
+        <a class="hero-product-stage" id="heroProductStage" href="./product.html?id=plus-615" aria-label="Roomba Plus 615 Combo 製品紹介">
           <div class="hero-product-copy">
-            <span>LATEST FLAGSHIP / 2026</span>
-            <strong>Roomba Max 775 Combo</strong>
-            <small>PowerSpin™ / PrecisionVision™ AI / AutoWash™</small>
+            <span>FEATURED / 2026</span>
+            <strong>Roomba Plus 615 Combo</strong>
+            <small>30,000Pa / PowerSpin™ / PrecisionVision™ AI</small>
           </div>
           <div class="hero-product-media">
-            <img id="heroProductImage" src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-775-aw-image.png" alt="Roomba Max 775 Combo ロボット + AutoWash 充電ステーション">
+            <img id="heroProductImage" src="https://www.irobot.co.uk/dw/image/v2/BFXP_PRD/on/demandware.static/-/Library-Sites-iRobotSharedLibrary/default/dw466c504b/EMEA/2026/615/Roomba_Plus_615_Combo_WashOnly_Black_Photo_In-situ_PowerSpinRollerMop_DTC_3000x3000.jpg?fmt=auto&sw=1000" alt="Roomba Plus 615 Combo">
           </div>
-          <span class="hero-product-cta">VIEW PRODUCT ↗</span>
+          <span class="hero-product-cta">PRODUCT STORY →</span>
         </a>
       </div>
 
@@ -97,8 +99,8 @@
       <div class="jump-grid">
         <a href="#latest"><b>01</b><span>READ</span><small>最新情報</small></a>
         <a href="#products"><b>02</b><span>DISCOVER</span><small>製品を知る</small></a>
-        <a href="#compare"><b>03</b><span>COMPARE</span><small>違いを比べる</small></a>
-        <a href="#guide"><b>04</b><span>GUIDE</span><small>困りごとを解決</small></a>
+        <a href="./compare.html"><b>03</b><span>COMPARE</span><small>違いを比べる</small></a>
+        <a href="./help.html"><b>04</b><span>HELP</span><small>困りごとを解決</small></a>
         <a href="#community"><b>05</b><span>COMMUNITY</span><small>みんなと話す</small></a>
       </div>
     </section>
@@ -185,7 +187,7 @@
     <section class="section shell" id="guide">
       <div class="section-head">
         <div><div class="eyebrow">GUIDE / 困ったとき</div><h2>TROUBLESHOOTING</h2></div>
-        <a class="text-link" href="https://www.irobot-jp.com/support/" target="_blank" rel="noopener">公式サポート →</a>
+        <a class="text-link" href="./help.html">Team iRobotの解決ガイド →</a>
       </div>
       <div class="trouble-grid">
         <a href="https://answers.irobot.com/" target="_blank" rel="noopener"><span>01</span><h3>充電しない</h3><p>ステーション、端子、設置場所から確認。</p><b>CHECK →</b></a>
@@ -214,8 +216,8 @@
         <div class="eyebrow light">COMMUNITY / TEAM IROBOT</div>
         <h2>好きな人同士なら、<br>もっとルンバは面白い。</h2>
         <p>機種の話、メンテナンス、アップデート、ちょっとした疑問。Team iRobotは、ルンバ・iRobot製品を楽しむ人のためのオープンチャットです。</p>
-        <button class="join-button" id="joinButton" type="button">オープンチャット参加リンクを設定する →</button>
-        <small id="joinHint">参加URLはまだサイトに登録されていません。</small>
+        <button class="join-button" id="joinButton" type="button">オープンチャットに参加する →</button>
+        <small id="joinHint">LINE オープンチャットで参加できます。</small>
       </div>
       <div class="community-art" aria-hidden="true">
         <div class="big-disc"><span></span></div>
@@ -236,6 +238,6 @@
     <small>© 2026 Team iRobot. Unofficial fan community.</small>
   </footer>
 
-  <script src="./app.js"></script>
+  <script src="./data.js"></script><script src="./app.js"></script>
 </body>
 </html>
