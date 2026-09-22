@@ -634,3 +634,11 @@ img{max-width:100%;display:block}
 @media(prefers-reduced-motion:reduce){
  .site-intro-roomba{display:none!important}
 }
+
+
+/* --- Community cleanup --- */
+.community{
+  grid-template-columns:1fr!important;
+  min-height:auto!important;
+}
+.community-art{display:none!important}
