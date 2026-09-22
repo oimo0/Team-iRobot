@@ -126,8 +126,8 @@ if (intro) {
   if (reduceMotion) {
     finishIntro();
   } else {
-    window.addEventListener("load", () => setTimeout(finishIntro, 880), {once:true});
-    setTimeout(finishIntro, 1800);
+    window.addEventListener("load", () => setTimeout(finishIntro, 3000), {once:true});
+    setTimeout(finishIntro, 3400);
   }
 }
 
