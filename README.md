@@ -45,7 +45,7 @@ const OPENCHAT_URL = "ここにURL";
 - `index.html` — ページ本体
 - `styles.css` — レスポンシブデザイン
 - `app.js` — 製品DB、検索、フィルター、UI
-- `.github/workflows/pages.yml` — GitHub Pagesデプロイ
+- `.github/workflows/validate.yml` — 静的サイトの自動チェック
 
 ## 権利表記
 
