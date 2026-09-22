@@ -29,7 +29,7 @@ const products = [
     name:"Roomba 105 Combo + AutoEmpty",
     family:"Roomba",
     filters:["combo","autoempty"],
-    image:"",
+    image:"https://store.irobot-jp.com/client_info/FS/itemimage/Y351060.jpg",
     summary:"掃除機がけと水拭きを選べるシンプルなCombo。AutoEmptyでは最大75日分のゴミを収納する設計。",
     mop:"マイクロファイバー",
     dock:"AutoEmpty",
@@ -121,7 +121,7 @@ function renderProducts(filter="all", query=""){
       ? '<img loading="lazy" src="'+escapeHTML(p.image)+'" alt="'+escapeHTML(p.name)+'" onerror="this.parentElement.innerHTML=window.productFallback(\''+escapeHTML(p.name).replace(/'/g,"\\'")+'\')">'
       : fallbackRobot(p.name);
     return `
-      <article class="product-card">
+      <article class="product-card reveal-item">
         <div class="product-image">${image}</div>
         <div class="product-badges">${badges}</div>
         <h3>${escapeHTML(p.name)}</h3>
@@ -135,6 +135,7 @@ function renderProducts(filter="all", query=""){
         </div>
       </article>`;
   }).join("");
+  if (window.observeRevealables) window.observeRevealables(grid);
 }
 window.productFallback = fallbackRobot;
 
@@ -195,3 +196,88 @@ document.getElementById("joinButton").addEventListener("click", () => {
     hint.style.color = "#fff";
   }
 });
+
+
+// --- Rich motion inspired by editorial product sites ---
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const intro = document.getElementById("siteIntro");
+if (intro) {
+  const finishIntro = () => intro.classList.add("is-done");
+  if (reduceMotion) {
+    finishIntro();
+  } else {
+    window.addEventListener("load", () => setTimeout(finishIntro, 880), {once:true});
+    setTimeout(finishIntro, 1800);
+  }
+}
+
+const progress = document.getElementById("scrollProgress");
+const updateProgress = () => {
+  if (!progress) return;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+  progress.style.width = (pct * 100).toFixed(2) + "%";
+};
+window.addEventListener("scroll", updateProgress, {passive:true});
+updateProgress();
+
+let revealObserver;
+window.observeRevealables = (root=document) => {
+  const items = root.querySelectorAll(".reveal-item:not([data-reveal-bound])");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    items.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, {threshold:.12, rootMargin:"0px 0px -5% 0px"});
+  }
+  items.forEach((el,i) => {
+    el.dataset.revealBound = "1";
+    el.style.transitionDelay = Math.min(i % 5, 4) * 55 + "ms";
+    revealObserver.observe(el);
+  });
+};
+
+document.querySelectorAll(".section-head,.feature-card,.jump-grid a,.news-lead,.news-list a,.trouble-grid a,.timeline-row,.community-inner").forEach(el => el.classList.add("reveal-item"));
+window.observeRevealables();
+
+const heroStage = document.getElementById("heroProductStage");
+const heroImage = document.getElementById("heroProductImage");
+if (heroStage && heroImage && !reduceMotion) {
+  const moveHero = (x=0,y=0) => {
+    heroImage.style.setProperty("--px", x);
+    heroImage.style.setProperty("--py", y);
+  };
+  heroStage.addEventListener("pointermove", e => {
+    const r = heroStage.getBoundingClientRect();
+    const x = ((e.clientX-r.left)/r.width-.5)*10;
+    const y = ((e.clientY-r.top)/r.height-.5)*8;
+    heroImage.style.marginRight = x.toFixed(1) + "px";
+    heroImage.style.marginBottom = (-y).toFixed(1) + "px";
+  });
+  heroStage.addEventListener("pointerleave", () => {
+    heroImage.style.marginRight = "";
+    heroImage.style.marginBottom = "";
+  });
+}
+
+const mobileCarousel = window.matchMedia("(max-width: 900px)");
+let featureTimer;
+const startFeatureAutoplay = () => {
+  clearInterval(featureTimer);
+  if (!mobileCarousel.matches || reduceMotion || cards.length < 2) return;
+  let index = 0;
+  featureTimer = setInterval(() => {
+    index = (index + 1) % cards.length;
+    cards[index].scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});
+  }, 5200);
+};
+["pointerdown","touchstart","wheel"].forEach(type => rail?.addEventListener(type, () => clearInterval(featureTimer), {passive:true}));
+mobileCarousel.addEventListener?.("change", startFeatureAutoplay);
+startFeatureAutoplay();
