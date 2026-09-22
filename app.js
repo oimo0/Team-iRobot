@@ -1,91 +1,12 @@
-const OPENCHAT_URL = "";
+const OPENCHAT_URL = "https://line.me/ti/g2/6YTxJleHIJ7dZ88OQ64XMH9MerU4rNsEn-E4BA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default";
 
-const products = [
-  {
-    name:"Roomba Mini + AutoEmpty",
-    family:"Mini",
-    filters:["compact","combo","autoempty"],
-    image:"https://www.irobot-jp.com/product/img/family/260219/roomba-min-ae_wh.png",
-    summary:"ルンバ史上最小サイズ。使い捨て床拭きシートに対応し、AutoEmptyでゴミ収集も自動化。",
-    mop:"シート式",
-    dock:"AutoEmpty",
-    nav:"ClearView LiDAR",
-    point:"小さな間取り・省スペース",
-    url:"https://www.irobot-jp.com/product/"
-  },
-  {
-    name:"Roomba Mini Slim",
-    family:"Mini",
-    filters:["compact","combo"],
-    image:"https://www.irobot-jp.com/product/img/family/260219/roomba-min-sc_wh.png",
-    summary:"縦置きできるSlimCharge充電スタンドを採用。床の占有を抑えながら掃除機がけとシート水拭き。",
-    mop:"シート式",
-    dock:"SlimCharge",
-    nav:"ClearView LiDAR",
-    point:"置き場所を最小限に",
-    url:"https://store.irobot-jp.com/item/F115060.html"
-  },
-  {
-    name:"Roomba 105 Combo + AutoEmpty",
-    family:"Roomba",
-    filters:["combo","autoempty"],
-    image:"https://store.irobot-jp.com/client_info/FS/itemimage/Y351060.jpg",
-    summary:"掃除機がけと水拭きを選べるシンプルなCombo。AutoEmptyでは最大75日分のゴミを収納する設計。",
-    mop:"マイクロファイバー",
-    dock:"AutoEmpty",
-    nav:"ClearView LiDAR",
-    point:"コスパとシンプル機能",
-    url:"https://store.irobot-jp.com/item/Y351060.html"
-  },
-  {
-    name:"Roomba Plus 405 Combo",
-    family:"Plus",
-    filters:["combo","autowash","autoempty"],
-    image:"https://www.irobot-jp.com/product/img/family/260219/roomba-plus-405-image.png",
-    summary:"DualClean回転モップとAutoWash充電ステーションを搭載。モップ洗浄・乾燥まで自動化。",
-    mop:"DualClean",
-    dock:"AutoWash",
-    nav:"ClearView LiDAR",
-    point:"水拭きの手間を減らす",
-    url:"https://store.irobot-jp.com/item/G185060.html"
-  },
-  {
-    name:"Roomba Plus 515 Combo",
-    family:"Plus",
-    filters:["compact","combo","autowash","autoempty"],
-    image:"https://www.irobot-jp.com/product/img/family/260804/roomba-plus-515-image_pc.png?1234=",
-    summary:"日本の住環境を意識したコンパクト設計。DualCleanモップ、温水洗浄・温風乾燥に対応。",
-    mop:"DualClean",
-    dock:"AutoWash",
-    nav:"ClearView LiDAR",
-    point:"コンパクト + 高機能",
-    url:"https://store.irobot-jp.com/category/ROOMBA/N285060.html"
-  },
-  {
-    name:"Roomba Max 775 Combo",
-    family:"Max",
-    filters:["combo","autowash","autoempty"],
-    image:"https://www.irobot-jp.com/product/img/family/260717/roomba-max-775-aw-image.png",
-    summary:"Maxシリーズのフラッグシップ。伸縮するPowerSpinローラーモップとAI障害物回避を組み合わせる。",
-    mop:"PowerSpinローラー",
-    dock:"AutoWash",
-    nav:"PrecisionVision AI + ClearView Pro LiDAR",
-    point:"清掃力・水拭き・障害物回避",
-    url:"https://store.irobot-jp.com/item/X285060.html"
-  },
-  {
-    name:"Roomba Max 715 Vac",
-    family:"Max",
-    filters:["vac","autoempty"],
-    image:"https://www.irobot-jp.com/product/img/family/260717/roomba-max-715-ae-image.png",
-    summary:"水拭きを省き、掃除機がけに集中したMax。強力な吸引と絡まりにくいゴム製ブラシを搭載。",
-    mop:"—",
-    dock:"AutoEmpty",
-    nav:"ClearView Pro LiDAR",
-    point:"掃除機がけを最優先",
-    url:"https://www.irobot-jp.com/product/"
-  }
-];
+const products = (window.TEAM_IROBOT_PRODUCTS || []).map(p => ({
+  ...p,
+  filters:p.tags || [],
+  nav:p.navigation,
+  point:p.bestFor,
+  url:p.official
+}));
 
 const escapeHTML = (value="") => String(value).replace(/[&<>"']/g, c => ({
   "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
@@ -131,7 +52,8 @@ function renderProducts(filter="all", query=""){
         <div class="spec-line"><span>DOCK</span><b>${escapeHTML(p.dock)}</b></div>
         <div class="spec-line"><span>NAVIGATION</span><b>${escapeHTML(p.nav)}</b></div>
         <div class="product-actions">
-          <a href="${escapeHTML(p.url)}" target="_blank" rel="noopener">公式情報 →</a>
+          <a href="./product.html?id=${encodeURIComponent(p.id)}">詳しく見る →</a>
+          <a href="${escapeHTML(p.url)}" target="_blank" rel="noopener">公式情報 ↗</a>
         </div>
       </article>`;
   }).join("");
@@ -191,9 +113,7 @@ document.getElementById("joinButton").addEventListener("click", () => {
   const hint = document.getElementById("joinHint");
   if(OPENCHAT_URL){
     window.open(OPENCHAT_URL,"_blank","noopener");
-  }else{
-    hint.textContent = "オープンチャットのURLをもらえれば、ここから直接参加できるように設定できます。";
-    hint.style.color = "#fff";
+    hint.textContent = "LINE オープンチャットを開いています…";
   }
 });
 
