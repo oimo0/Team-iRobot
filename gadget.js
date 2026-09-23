@@ -4,7 +4,19 @@
   const $ = s => document.querySelector(s);
   const $$ = s => [...document.querySelectorAll(s)];
   const esc = s => String(s ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
-  const state={query:"",brand:"all",origin:"all",os:"all",form:"all",year:"all",tier:"all",sort:"newest",visible:36,compare:[]};
+  const params=new URLSearchParams(location.search);
+  const state={
+    query:params.get("q")||"",
+    brand:params.get("brand")||"all",
+    origin:params.get("origin")||"all",
+    os:params.get("os")||"all",
+    form:params.get("form")||"all",
+    year:params.get("year")||"all",
+    tier:params.get("tier")||"all",
+    sort:params.get("sort")||"newest",
+    visible:36,
+    compare:[]
+  };
 
   const labels={
     bar:"通常",fold:"横折り",flip:"縦折り",
@@ -22,6 +34,17 @@
   fillSelect("#formFilter","form","形");
   fillSelect("#yearFilter","year","年");
   fillSelect("#tierFilter","tier","クラス");
+  const initialControls={
+    "#phoneSearch":state.query,
+    "#brandFilter":state.brand,
+    "#originFilter":state.origin,
+    "#osFilter":state.os,
+    "#formFilter":state.form,
+    "#yearFilter":state.year,
+    "#tierFilter":state.tier,
+    "#sortFilter":state.sort
+  };
+  Object.entries(initialControls).forEach(([sel,val])=>{const el=$(sel);if(el)el.value=val;});
 
   function filtered(){
     const q=state.query.trim().toLowerCase();
