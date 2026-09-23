@@ -10,7 +10,7 @@
   <meta http-equiv="Expires" content="0">
   <title>Team iRobot — Roombaを、もっと知る。もっと楽しむ。</title>
   <link rel="preconnect" href="https://www.irobot-jp.com">
-  <link rel="stylesheet" href="./styles.css?v=20260923-0912">
+  <link rel="stylesheet" href="./styles.css?v=20260923-0921">
 
   <style id="intro-critical-css">
     #siteIntro.site-intro-roomba{position:fixed!important;inset:0!important;z-index:99999!important;background:#f7f7f5!important;overflow:hidden!important;display:block!important;opacity:1;visibility:visible;transition:opacity .42s ease,visibility .42s ease}
@@ -43,9 +43,25 @@
     #siteIntro.intro-pop .r3{animation-delay:.48s!important}
     #siteIntro.intro-pop .r4{animation-delay:.68s!important}
     #siteIntro.intro-pop .r5{animation-delay:.88s!important}
+    #siteIntro.intro-drop .r1,
+    #siteIntro.intro-drop .r2,
+    #siteIntro.intro-drop .r4,
+    #siteIntro.intro-drop .r5{
+      animation:tiRise .78s cubic-bezier(.16,.84,.28,1) forwards!important;
+    }
+    #siteIntro.intro-drop .r1{animation-delay:.05s!important}
+    #siteIntro.intro-drop .r2{animation-delay:.18s!important}
+    #siteIntro.intro-drop .r4{animation-delay:.31s!important}
+    #siteIntro.intro-drop .r5{animation-delay:.44s!important}
+    #siteIntro.intro-drop .r3{
+      animation:tiDropHero 1.02s cubic-bezier(.18,.86,.26,1) forwards!important;
+      animation-delay:1.12s!important;
+      z-index:4!important;
+    }
     #siteIntro .intro-roomba-title{position:absolute!important;left:50%!important;top:11vh!important;bottom:auto!important;transform:translateX(-50%) translateY(-10px)!important;text-align:center!important;opacity:0;animation:tiTitle .35s ease forwards!important;animation-delay:1.85s!important;z-index:5!important;pointer-events:none!important}
     #siteIntro.intro-center .intro-roomba-title{animation-delay:1.75s!important}
     #siteIntro.intro-pop .intro-roomba-title{animation-delay:1.70s!important}
+    #siteIntro.intro-drop .intro-roomba-title{animation-delay:2.28s!important}
     #siteIntro .intro-roomba-title small{display:block!important;font:800 8px/1.2 system-ui,sans-serif!important;letter-spacing:.18em!important;color:#747b7d!important;margin-bottom:9px!important}
     #siteIntro .intro-roomba-title strong{display:block!important;font:900 38px/.9 system-ui,sans-serif!important;letter-spacing:-.055em!important;color:#111!important}
     @keyframes tiRise{0%{opacity:0;transform:translateY(0) scale(.78)}60%{opacity:1;transform:translateY(-40vh) scale(1.05)}100%{opacity:1;transform:translateY(-38vh) scale(1)}}
@@ -68,6 +84,12 @@
       72%{opacity:1;transform:translateY(-38vh) scale(1.12) rotate(2deg)}
       100%{opacity:1;transform:translateY(-38vh) scale(1) rotate(0)}
     }
+    @keyframes tiDropHero{
+      0%{opacity:0;transform:translateY(-125vh) scale(.9) rotate(-3deg)}
+      66%{opacity:1;transform:translateY(-34vh) scale(1.04) rotate(1deg)}
+      82%{opacity:1;transform:translateY(-41vh) scale(.98) rotate(0)}
+      100%{opacity:1;transform:translateY(-38vh) scale(1) rotate(0)}
+    }
     @media(min-width:901px){
       #siteIntro .r1{width:180px!important;height:180px!important;left:1%!important}
       #siteIntro .r2{width:220px!important;height:220px!important;left:18%!important}
@@ -80,6 +102,7 @@
       @keyframes tiFromLeft{0%{opacity:0;transform:translate(-70vw,-43vh) scale(.9)}100%{opacity:1;transform:translate(0,-43vh) scale(1)}}
       @keyframes tiFromRight{0%{opacity:0;transform:translate(70vw,-43vh) scale(.9)}100%{opacity:1;transform:translate(0,-43vh) scale(1)}}
       @keyframes tiPop{0%{opacity:0;transform:translateY(-43vh) scale(.05) rotate(-10deg)}72%{opacity:1;transform:translateY(-43vh) scale(1.12) rotate(2deg)}100%{opacity:1;transform:translateY(-43vh) scale(1) rotate(0)}}
+      @keyframes tiDropHero{0%{opacity:0;transform:translateY(-135vh) scale(.9) rotate(-3deg)}66%{opacity:1;transform:translateY(-39vh) scale(1.04) rotate(1deg)}82%{opacity:1;transform:translateY(-46vh) scale(.98) rotate(0)}100%{opacity:1;transform:translateY(-43vh) scale(1) rotate(0)}}
     }
   </style>
 </head>
@@ -88,7 +111,7 @@
     <script>
       (function(){
         var intro=document.currentScript.parentElement;
-        var variants=["intro-rise","intro-center","intro-pop"];
+        var variants=["intro-rise","intro-center","intro-pop","intro-drop"];
         var previous="";
         try{previous=localStorage.getItem("teamIRobotIntroVariant")||"";}catch(e){}
         var pool=variants.filter(function(v){return v!==previous;});
