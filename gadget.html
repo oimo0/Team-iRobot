@@ -6,8 +6,8 @@
   <meta name="description" content="Team Gadget — スマホ、PC、オーディオ、AI、家電。ガジェット好きのためのコミュニティページ。">
   <meta name="theme-color" content="#ffffff">
   <title>Team Gadget — ガジェットを、もっと知る。もっと楽しむ。</title>
-  <link rel="stylesheet" href="./styles.css?v=20260923-1450">
-  <link rel="stylesheet" href="./gadget.css?v=20260923-1450">
+  <link rel="stylesheet" href="./styles.css?v=20260923-1435">
+  <link rel="stylesheet" href="./gadget.css?v=20260923-1435">
 </head>
 <body>
   <header class="site-header">
@@ -16,27 +16,33 @@
       <a href="#latest">News</a>
       <a href="#phones">Phones</a>
       <a href="#categories">Categories</a>
-      <a href="./">Robot</a>
       <a href="#community">Community</a>
     </nav>
     <button class="menu-button" id="menuButton" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
   </header>
 
   <div class="mobile-menu" id="mobileMenu" hidden>
-    <a href="#latest">News</a>
-    <a href="#phones">Phones</a>
-    <a href="#categories">Categories</a>
-    <a href="./">Robot Page</a>
-    <a href="#community">Community</a>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-head">
+        <strong>MENU</strong>
+        <button class="mobile-close" id="menuClose" type="button" aria-label="メニューを閉じる">×</button>
+      </div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-label">PAGES</span>
+        <a href="./gadget.html">Team Gadget</a>
+        <a href="./">Team Gadget（Robot ver）</a>
+      </div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-label">GADGET</span>
+        <a href="#latest">News</a>
+        <a href="#phones">Phones</a>
+        <a href="#categories">Categories</a>
+        <a href="#community">Community</a>
+      </div>
+    </div>
   </div>
 
-  <main id="top">
-    <a class="gadget-page-switch shell robot-switch" href="./">
-      <span><b>TEAM GADGET / ROBOT VER</b><small>Roomba・iRobot製品の専門ページはこちら</small></span>
-      <strong>ROBOT PAGE →</strong>
-    </a>
-
-    <section class="hero shell">
+  <main id="top"><section class="hero shell">
       <div class="eyebrow">TEAM GADGET / 2026</div>
       <div class="hero-grid">
         <div>
@@ -45,15 +51,15 @@
         </div>
 
         <a class="hero-product-stage gadget-hero-stage" href="https://www.apple.com/jp/iphone-18-pro/" target="_blank" rel="noopener" aria-label="iPhone 18 Pro 公式情報">
-          <div class="hero-product-copy">
+          <div class="gadget-feature-copy">
             <span>FEATURED / 2026.09</span>
             <strong>iPhone 18 Pro</strong>
             <small>A20 Pro / 可変絞り48MP Fusion / iOS 27</small>
           </div>
-          <div class="hero-product-media">
+          <div class="gadget-feature-image">
             <img src="https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-color-lineup-260909_big.jpg.large.jpg" alt="iPhone 18 Pro">
           </div>
-          <span class="hero-product-cta">APPLE OFFICIAL ↗</span>
+          <div class="gadget-feature-link">APPLE OFFICIAL ↗</div>
         </a>
       </div>
 
@@ -160,7 +166,7 @@
         </article>
 
         <article class="product-card">
-          <div class="product-image gadget-product-image"><img loading="lazy" src="https://www-file.honor.com/content/dam/honor/common/products/honor-magic8-pro/imgs/section-kv/aistar-white-1.svg" alt="HONOR Magic8 Pro"></div>
+          <div class="product-image gadget-product-image"><img loading="lazy" src="https://www-file.honor.com/content/dam/honor/global/news/2026/honor-magic8-launch-uk/news1.jpg" alt="HONOR Magic8 Pro"></div>
           <div class="product-badges"><span class="badge">HONOR</span><span class="badge gray">AI CAMERA</span></div>
           <h3>HONOR Magic8 Pro</h3>
           <p class="summary">200MP Ultra Night Telephotoと7,100mAhシリコンカーボン電池。AIカメラと大容量電池の両立型。</p>
@@ -225,18 +231,25 @@
   <script>
     (function(){
       const button=document.getElementById("menuButton");
+      const close=document.getElementById("menuClose");
       const menu=document.getElementById("mobileMenu");
       if(!button||!menu)return;
+      const closeMenu=()=>{
+        menu.hidden=true;
+        button.setAttribute("aria-expanded","false");
+        document.body.style.overflow="";
+      };
+      const openMenu=()=>{
+        menu.hidden=false;
+        button.setAttribute("aria-expanded","true");
+        document.body.style.overflow="hidden";
+      };
       button.addEventListener("click",()=>{
-        const open=button.getAttribute("aria-expanded")==="true";
-        button.setAttribute("aria-expanded",String(!open));
-        menu.hidden=open;
+        button.getAttribute("aria-expanded")==="true" ? closeMenu() : openMenu();
       });
+      close?.addEventListener("click",closeMenu);
       menu.addEventListener("click",e=>{
-        if(e.target.matches("a")){
-          menu.hidden=true;
-          button.setAttribute("aria-expanded","false");
-        }
+        if(e.target===menu || e.target.matches("a")) closeMenu();
       });
     })();
   </script>
