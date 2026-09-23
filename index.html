@@ -10,7 +10,7 @@
   <meta http-equiv="Expires" content="0">
   <title>Team Gadget（Robot ver） — Roombaを、もっと知る。もっと楽しむ。</title>
   <link rel="preconnect" href="https://www.irobot-jp.com">
-  <link rel="stylesheet" href="./styles.css?v=20260923-1412">
+  <link rel="stylesheet" href="./styles.css?v=20260923-1435">
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
@@ -19,7 +19,6 @@
       <span>Team Gadget（Robot ver）</span>
     </a>
     <nav class="desktop-nav" aria-label="メインナビゲーション">
-      <a href="./gadget.html">Gadget</a>
       <a href="#latest">News</a>
       <a href="#products">Products</a>
       <a href="./compare.html">Compare</a>
@@ -33,21 +32,29 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu" hidden>
-    <a href="./gadget.html">Gadget Page</a>
-    <a href="#latest">News</a>
-    <a href="#products">Products</a>
-    <a href="./compare.html">Compare</a>
-    <a href="./history.html">History</a>
-    <a href="./help.html">Help</a>
-    <a href="#community">Community</a>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-head">
+        <strong>MENU</strong>
+        <button class="mobile-close" id="menuClose" type="button" aria-label="メニューを閉じる">×</button>
+      </div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-label">PAGES</span>
+        <a href="./">Team Gadget（Robot ver）</a>
+        <a href="./gadget.html">Team Gadget</a>
+      </div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-label">ROBOT</span>
+        <a href="#latest">News</a>
+        <a href="#products">Products</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./history.html">History</a>
+        <a href="./help.html">Help</a>
+        <a href="#community">Community</a>
+      </div>
+    </div>
   </div>
 
-  <main id="top">
-    <a class="gadget-page-switch shell" href="./gadget.html">
-      <span><b>TEAM GADGET</b><small>スマホ・PC・オーディオ・AIなど、ガジェット全般はこちら</small></span>
-      <strong>GADGET PAGE →</strong>
-    </a>
-    <section class="hero shell">
+  <main id="top"><section class="hero shell">
       <div class="eyebrow">TEAM GADGET / ROBOT VER</div>
       <div class="hero-grid">
         <div>
