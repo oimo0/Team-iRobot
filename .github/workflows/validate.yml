@@ -16,11 +16,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check JavaScript syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check gadget.js
+          node --check gadget-data.js
       - name: Check required files
         run: |
           test -f index.html
           test -f styles.css
           test -f app.js
+          test -f gadget.html
+          test -f gadget.css
+          test -f gadget.js
+          test -f gadget-data.js
           grep -q 'id="productGrid"' index.html
           grep -Fq 'Team Gadget（Robot ver）' index.html
