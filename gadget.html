@@ -4,167 +4,241 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Team Gadget — スマホ、PC、オーディオ、AI、家電。ガジェット好きのためのコミュニティページ。">
-  <meta name="theme-color" content="#f5f5f2">
-  <title>Team Gadget — ガジェットは、語るほど面白い。</title>
-  <link rel="stylesheet" href="./gadget.css?v=20260923-1405">
+  <meta name="theme-color" content="#ffffff">
+  <title>Team Gadget — ガジェットを、もっと知る。もっと楽しむ。</title>
+  <link rel="stylesheet" href="./styles.css?v=20260923-1450">
+  <link rel="stylesheet" href="./gadget.css?v=20260923-1450">
 </head>
 <body>
-  <header class="tg-header">
-    <a class="tg-brand" href="./gadget.html" aria-label="Team Gadget ホーム">
-      <span class="tg-mark">TG</span>
-      <span>Team Gadget</span>
-    </a>
-    <nav class="tg-nav" aria-label="メインナビゲーション">
-      <a href="#china">China Phones</a>
-      <a href="#zones">Gadget Zones</a>
-      <a href="./">Roomba</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Team Gadget ホーム"><span>Team Gadget</span></a>
+    <nav class="desktop-nav" aria-label="メインナビゲーション">
+      <a href="#latest">News</a>
+      <a href="#phones">Phones</a>
+      <a href="#categories">Categories</a>
+      <a href="./">Robot</a>
       <a href="#community">Community</a>
     </nav>
-    <a class="tg-roomba-link" href="./">ROOMBA PAGE →</a>
+    <button class="menu-button" id="menuButton" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
   </header>
 
-  <main>
-    <section class="tg-hero tg-shell">
-      <div class="tg-hero-copy">
-        <div class="tg-eyebrow">TEAM GADGET / COMMUNITY</div>
-        <h1>ガジェットは、<br>語るほど<br>面白い。</h1>
-        <p>スマホ、PC、オーディオ、AI、家電。気になるものを持ち寄って、好きなだけ話す。特にチャイナスマホは濃いめです。</p>
-        <div class="tg-hero-actions">
-          <a class="tg-button primary" href="#china">CHINA PHONE WATCH →</a>
-          <a class="tg-button" href="./">ROOMBA PAGE →</a>
-        </div>
-      </div>
-      <div class="tg-hero-art" aria-hidden="true">
-        <div class="orbit orbit-a"></div>
-        <div class="orbit orbit-b"></div>
-        <div class="device phone-main"><span></span></div>
-        <div class="device phone-mini"><span></span></div>
-        <div class="device bud"><span></span></div>
-        <div class="device pad"><span></span></div>
-      </div>
-    </section>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#latest">News</a>
+    <a href="#phones">Phones</a>
+    <a href="#categories">Categories</a>
+    <a href="./">Robot Page</a>
+    <a href="#community">Community</a>
+  </div>
 
-    <section class="tg-marquee" aria-label="Team Gadget topics">
-      <div>SMARTPHONE <i>•</i> CHINA PHONE <i>•</i> AUDIO <i>•</i> PC <i>•</i> TABLET <i>•</i> AI <i>•</i> ROBOT VACUUM <i>•</i> CAMERA <i>•</i></div>
-    </section>
+  <main id="top">
+    <a class="gadget-page-switch shell robot-switch" href="./">
+      <span><b>TEAM GADGET / ROBOT VER</b><small>Roomba・iRobot製品の専門ページはこちら</small></span>
+      <strong>ROBOT PAGE →</strong>
+    </a>
 
-    <section class="tg-shell tg-section" id="china">
-      <div class="tg-section-head">
+    <section class="hero shell">
+      <div class="eyebrow">TEAM GADGET / 2026</div>
+      <div class="hero-grid">
         <div>
-          <div class="tg-eyebrow">CHINA PHONE WATCH / 2026.09</div>
-          <h2>今、気になる<br>チャイナスマホ。</h2>
+          <h1>ガジェットを、<br>もっと知る。<br>もっと楽しむ。</h1>
+          <p class="hero-copy">スマホ、PC、オーディオ、AI、家電。Team Gadgetは、好きなガジェットを持ち寄って語るコミュニティです。チャイナスマホはかなり濃いめ。</p>
         </div>
-        <p>カメラ、電池、冷却、UI。方向性がバラバラだから面白い。公式情報をもとに、Team Gadgetで話題にしやすい現行機をピックアップ。</p>
-      </div>
 
-      <div class="phone-grid">
-        <article class="phone-card hero-phone">
-          <div class="phone-visual xiaomi"><div class="camera-island three"></div><span>17 ULTRA</span></div>
-          <div class="phone-card-copy">
-            <div class="phone-brand">XIAOMI / CAMERA</div>
-            <h3>Xiaomi 17 Ultra</h3>
-            <p>Leicaの200MP望遠は75–100mmのメカニカル光学ズーム。Snapdragon 8 Elite Gen 5、6,000mAhまで詰め込んだカメラ特化フラッグシップ。</p>
-            <div class="spec-row"><span>200MP TELE</span><span>6000mAh</span><span>8 ELITE GEN 5</span></div>
-            <a href="https://www.mi.com/jp/product/xiaomi-17-ultra/" target="_blank" rel="noopener">公式情報 ↗</a>
+        <a class="hero-product-stage gadget-hero-stage" href="https://www.apple.com/jp/iphone-18-pro/" target="_blank" rel="noopener" aria-label="iPhone 18 Pro 公式情報">
+          <div class="hero-product-copy">
+            <span>FEATURED / 2026.09</span>
+            <strong>iPhone 18 Pro</strong>
+            <small>A20 Pro / 可変絞り48MP Fusion / iOS 27</small>
           </div>
-        </article>
-
-        <article class="phone-card">
-          <div class="phone-visual oppo"><div class="camera-island huge"></div><span>FIND X9 ULTRA</span></div>
-          <div class="phone-card-copy">
-            <div class="phone-brand">OPPO / ZOOM</div>
-            <h3>OPPO Find X9 Ultra</h3>
-            <p>2億画素の広角＋2億画素望遠に、光学10倍の5,000万画素超望遠。7,050mAh・100W充電で、日本でも2026年7月から販売。</p>
-            <div class="spec-row"><span>10× OPTICAL</span><span>7050mAh</span><span>100W</span></div>
-            <a href="https://www.oppo.com/jp/smartphones/series-find-x/find-x9-ultra/" target="_blank" rel="noopener">公式情報 ↗</a>
+          <div class="hero-product-media">
+            <img src="https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-color-lineup-260909_big.jpg.large.jpg" alt="iPhone 18 Pro">
           </div>
-        </article>
-
-        <article class="phone-card">
-          <div class="phone-visual vivo"><div class="camera-island ring"></div><span>X300 ULTRA</span></div>
-          <div class="phone-card-copy">
-            <div class="phone-brand">VIVO / ZEISS</div>
-            <h3>vivo X300 Ultra</h3>
-            <p>35mm広角と85mm望遠がどちらも200MP。ZEISS光学系、Snapdragon 8 Elite Gen 5、6,600mAhで“撮る”方向に全振りした一台。</p>
-            <div class="spec-row"><span>200MP + 200MP</span><span>6600mAh</span><span>ZEISS</span></div>
-            <a href="https://www.vivo.com/en/products/x300-ultra" target="_blank" rel="noopener">公式情報 ↗</a>
-          </div>
-        </article>
-
-        <article class="phone-card">
-          <div class="phone-visual honor"><div class="camera-island square"></div><span>MAGIC8 PRO</span></div>
-          <div class="phone-card-copy">
-            <div class="phone-brand">HONOR / AI CAMERA</div>
-            <h3>HONOR Magic8 Pro</h3>
-            <p>HONORが2026年のAIカメラフラッグシップとして展開するMagic8 Pro。撮影とAI機能を一体で押し出す方向性が面白い。</p>
-            <div class="spec-row"><span>AI CAMERA</span><span>FLAGSHIP</span><span>MAGICOS</span></div>
-            <a href="https://www.honor.com/global/phones/honor-magic8-pro/" target="_blank" rel="noopener">公式情報 ↗</a>
-          </div>
-        </article>
-
-        <article class="phone-card">
-          <div class="phone-visual redmagic"><div class="fan-core"></div><span>11S PRO</span></div>
-          <div class="phone-card-copy">
-            <div class="phone-brand">REDMAGIC / GAMING</div>
-            <h3>REDMAGIC 11S Pro</h3>
-            <p>Snapdragon 8 Elite Gen 5のリーディングバージョンに、空冷＋水冷のAquaCore。7,500mAhまで積んだ、かなり振り切ったゲーミング機。</p>
-            <div class="spec-row"><span>AQUACORE</span><span>7500mAh</span><span>80W</span></div>
-            <a href="https://jp.redmagic.gg/products/redmagic-11s-pro" target="_blank" rel="noopener">公式情報 ↗</a>
-          </div>
-        </article>
-      </div>
-      <p class="tg-data-note">掲載スペックは2026年9月23日時点で各メーカー公式情報を確認。地域・構成により仕様が異なる場合があります。</p>
-    </section>
-
-    <section class="tg-shell tg-section" id="zones">
-      <div class="tg-eyebrow">GADGET ZONES</div>
-      <h2 class="zones-title">スマホだけじゃない。</h2>
-      <div class="zone-grid">
-        <article><span>01</span><h3>SMARTPHONE</h3><p>中国メーカーからPixel、iPhoneまで。性能だけじゃなくUIやカメラの癖も含めて語る。</p></article>
-        <article><span>02</span><h3>AUDIO</h3><p>イヤホン、ヘッドホン、スピーカー。スペック表だけでは分からない「音の好み」も主役。</p></article>
-        <article><span>03</span><h3>PC / TABLET</h3><p>ノートPC、自作、タブレット。性能・価格・使い方をゆるく持ち寄る。</p></article>
-        <article><span>04</span><h3>AI / SOFTWARE</h3><p>生成AI、便利アプリ、OSアップデート。ハードの外側も普通にガジェット。</p></article>
-        <article><span>05</span><h3>SMART HOME</h3><p>スマート家電、ネットワーク、ロボット掃除機。生活に入り込むガジェットを深掘り。</p></article>
-        <article><span>06</span><h3>OTHER</h3><p>「これガジェット？」くらいでもOK。面白いものなら話題にする。</p></article>
-      </div>
-    </section>
-
-    <section class="roomba-portal tg-shell">
-      <div>
-        <div class="tg-eyebrow light">SPECIAL PAGE / ROOMBA</div>
-        <h2>Roombaは、<br>専用ページで深掘り。</h2>
-        <p>製品比較、iRobotの歴史、トラブル解決まで。ロボット掃除機だけは情報量が多いので、専門ページに分けています。</p>
-      </div>
-      <a href="./" class="portal-arrow" aria-label="Roomba専門ページへ">
-        <span>ROOMBA PAGE</span><strong>→</strong>
-      </a>
-    </section>
-
-    <section class="tg-community tg-shell" id="community">
-      <div class="tg-eyebrow">COMMUNITY / TEAM GADGET</div>
-      <div class="community-grid">
-        <div>
-          <h2>ガジェット好き、<br>集合。</h2>
-          <p>Roomba・iRobot製品についてはもちろん、スマホ、PC、オーディオ、AI、雑談まで。気になるものを気軽に話せるLINEオープンチャットです。</p>
-        </div>
-        <a class="join-big" href="https://line.me/ti/g2/6YTxJleHIJ7dZ88OQ64XMH9MerU4rNsEn-E4BA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener">
-          <span>LINE OPENCHAT</span>
-          <strong>参加する →</strong>
+          <span class="hero-product-cta">APPLE OFFICIAL ↗</span>
         </a>
       </div>
+
+      <div class="ticker" aria-label="注目情報">
+        <a href="https://www.apple.com/jp/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" target="_blank" rel="noopener">
+          <span class="ticker-label">LATEST</span>
+          <span>2026.09.18 — iPhone 18 Pro / Pro Max 発売</span>
+        </a>
+        <a href="#phones">
+          <span class="ticker-label">WATCH</span>
+          <span>Xiaomi / OPPO / HONOR / REDMAGIC など現行フラッグシップをチェック</span>
+        </a>
+      </div>
+
+      <div class="feature-rail" id="featureRail">
+        <article class="feature-card">
+          <div class="feature-meta">CHINA PHONE</div>
+          <h2>チャイナスマホ、濃いです。</h2>
+          <p>カメラ・電池・充電・冷却。メーカーごとの尖り方が違うから、スペックを見るだけでも面白い。</p>
+          <a class="text-link" href="#phones">スマホを見る →</a>
+        </article>
+        <article class="feature-card">
+          <div class="feature-meta">APPLE / 2026</div>
+          <h2>iPhoneも、もちろん。</h2>
+          <p>現行ProはiPhone 18 Pro。A20 Proと可変絞り48MP Fusionカメラを中心に進化。</p>
+          <a class="text-link" href="https://www.apple.com/jp/iphone-18-pro/" target="_blank" rel="noopener">Apple公式 →</a>
+        </article>
+        <article class="feature-card">
+          <div class="feature-meta">ROBOT</div>
+          <h2>Roombaは別ページで深掘り。</h2>
+          <p>製品比較、歴史、トラブル解決などはRobot verに分けて整理しています。</p>
+          <a class="text-link" href="./">Robot verを見る →</a>
+        </article>
+      </div>
     </section>
 
-    <section class="tg-credits tg-shell">
-      <div class="tg-eyebrow">TEAM / CREDITS</div>
-      <div class="credit-line"><span>FOUNDER / COMMUNITY ADMIN</span><b>へい</b></div>
-      <div class="credit-line"><span>WEBSITE / OPERATION</span><b>おいも</b></div>
+    <section class="section shell" id="latest">
+      <div class="section-head">
+        <div><div class="eyebrow">READ / CURRENT WATCH</div><h2>GADGET WATCH</h2></div>
+        <span class="source-note">2026.09.23時点 / 各メーカー公式情報を参照</span>
+      </div>
+      <div class="news-grid">
+        <a class="news-lead" href="https://www.apple.com/jp/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" target="_blank" rel="noopener">
+          <div class="news-visual gadget-news-visual">
+            <img src="https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-color-lineup-260909_big.jpg.large.jpg" alt="iPhone 18 Pro カラーラインナップ">
+          </div>
+          <div class="news-tag">APPLE / 2026.09.09</div>
+          <h3>iPhone 18 Pro、A20 Proと可変絞りカメラ。</h3>
+          <p>9月18日に発売。Pro Maxでは最大45時間のビデオ再生をうたう新世代Pro。</p>
+        </a>
+        <div class="news-list">
+          <a href="https://www.oppo.com/jp/smartphones/series-find-x/find-x9-ultra/" target="_blank" rel="noopener"><span>2026</span><strong>OPPO Find X9 Ultra — 光学10倍とデュアル2億画素</strong><em>OFFICIAL →</em></a>
+          <a href="https://www.mi.com/jp/product/xiaomi-17-ultra/" target="_blank" rel="noopener"><span>2026</span><strong>Xiaomi 17 Ultra — Leica 75–100mm可変式光学ズーム</strong><em>OFFICIAL →</em></a>
+          <a href="https://global.redmagic.gg/blogs/product-information/built-beyond-better-introducing-the-redmagic-11s-pro" target="_blank" rel="noopener"><span>2026</span><strong>REDMAGIC 11S Pro — 液冷＋空冷のAquaCore</strong><em>OFFICIAL →</em></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="phones">
+      <div class="section-head">
+        <div><div class="eyebrow">DISCOVER / SMARTPHONES</div><h2>PHONE DATABASE</h2></div>
+        <span class="source-note">実機画像: 各メーカー公式配信素材</span>
+      </div>
+
+      <div class="gadget-filter-row">
+        <span>APPLE</span><span>XIAOMI</span><span>OPPO</span><span>HONOR</span><span>REDMAGIC</span>
+      </div>
+
+      <div class="product-grid gadget-product-grid">
+        <article class="product-card">
+          <div class="product-image gadget-product-image"><img loading="lazy" src="https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-color-lineup-260909_big.jpg.large.jpg" alt="iPhone 18 Pro"></div>
+          <div class="product-badges"><span class="badge">APPLE</span><span class="badge gray">iOS</span></div>
+          <h3>iPhone 18 Pro</h3>
+          <p class="summary">A20 Pro、可変絞り対応48MP Fusionメインカメラ、新世代ベイパーチャンバーを搭載した2026年のPro。</p>
+          <div class="spec-line"><span>CHIP</span><b>A20 Pro</b></div>
+          <div class="spec-line"><span>CAMERA</span><b>48MP Fusion / 可変絞り</b></div>
+          <div class="spec-line"><span>DISPLAY</span><b>6.3-inch OLED</b></div>
+          <div class="spec-line"><span>OS</span><b>iOS 27</b></div>
+          <div class="product-actions"><a href="https://www.apple.com/jp/iphone-18-pro/" target="_blank" rel="noopener">公式情報 ↗</a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image gadget-product-image dark"><img loading="lazy" src="https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-17-ultra/pc/new_green_img.jpg" alt="Xiaomi 17 Ultra"></div>
+          <div class="product-badges"><span class="badge">XIAOMI</span><span class="badge gray">LEICA</span></div>
+          <h3>Xiaomi 17 Ultra</h3>
+          <p class="summary">ライカ2億画素75–100mm望遠、1インチ広角、6,000mAh。カメラ方向にかなり尖ったUltra。</p>
+          <div class="spec-line"><span>CHIP</span><b>Snapdragon 8 Elite Gen 5</b></div>
+          <div class="spec-line"><span>TELE</span><b>200MP / 75–100mm</b></div>
+          <div class="spec-line"><span>BATTERY</span><b>6000mAh</b></div>
+          <div class="spec-line"><span>CAMERA</span><b>Leica</b></div>
+          <div class="product-actions"><a href="https://www.mi.com/jp/product/xiaomi-17-ultra/" target="_blank" rel="noopener">公式情報 ↗</a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image gadget-product-image"><img loading="lazy" src="https://www.oppo.com/content/dam/oppo_com/common/mkt/v2-2/find-x9-ultra-x9s-en/find-x9-ultra/specs/orange-brown.png" alt="OPPO Find X9 Ultra"></div>
+          <div class="product-badges"><span class="badge">OPPO</span><span class="badge gray">HASSELBLAD</span></div>
+          <h3>OPPO Find X9 Ultra</h3>
+          <p class="summary">2億画素広角＋2億画素望遠に、光学10倍の5,000万画素超望遠。日本でも販売される超カメラ特化機。</p>
+          <div class="spec-line"><span>CHIP</span><b>Snapdragon 8 Elite Gen 5</b></div>
+          <div class="spec-line"><span>ZOOM</span><b>10× Optical</b></div>
+          <div class="spec-line"><span>BATTERY</span><b>7050mAh</b></div>
+          <div class="spec-line"><span>CHARGE</span><b>100W / 50W Wireless</b></div>
+          <div class="product-actions"><a href="https://www.oppo.com/jp/smartphones/series-find-x/find-x9-ultra/" target="_blank" rel="noopener">公式情報 ↗</a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image gadget-product-image"><img loading="lazy" src="https://www-file.honor.com/content/dam/honor/common/products/honor-magic8-pro/imgs/section-kv/aistar-white-1.svg" alt="HONOR Magic8 Pro"></div>
+          <div class="product-badges"><span class="badge">HONOR</span><span class="badge gray">AI CAMERA</span></div>
+          <h3>HONOR Magic8 Pro</h3>
+          <p class="summary">200MP Ultra Night Telephotoと7,100mAhシリコンカーボン電池。AIカメラと大容量電池の両立型。</p>
+          <div class="spec-line"><span>CHIP</span><b>Snapdragon 8 Elite Gen 5</b></div>
+          <div class="spec-line"><span>TELE</span><b>200MP / 3.7×</b></div>
+          <div class="spec-line"><span>BATTERY</span><b>7100mAh</b></div>
+          <div class="spec-line"><span>CHARGE</span><b>100W / 80W Wireless</b></div>
+          <div class="product-actions"><a href="https://www.honor.com/global/phones/honor-magic8-pro/" target="_blank" rel="noopener">公式情報 ↗</a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image gadget-product-image dark"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0024/0684/2441/files/built-beyond-better-introducing-the-redmagic-11s-pro-featured.jpg?v=1780368617" alt="REDMAGIC 11S Pro"></div>
+          <div class="product-badges"><span class="badge">REDMAGIC</span><span class="badge gray">GAMING</span></div>
+          <h3>REDMAGIC 11S Pro</h3>
+          <p class="summary">空冷＋液冷のAquaCore、7,500mAh、144Hz AMOLED。ゲーム性能と冷却を最優先した振り切り系。</p>
+          <div class="spec-line"><span>CHIP</span><b>8 Elite Gen 5 Leading</b></div>
+          <div class="spec-line"><span>COOLING</span><b>AquaCore + 24,000rpm Fan</b></div>
+          <div class="spec-line"><span>BATTERY</span><b>7500mAh</b></div>
+          <div class="spec-line"><span>DISPLAY</span><b>144Hz AMOLED</b></div>
+          <div class="product-actions"><a href="https://global.redmagic.gg/blogs/product-information/built-beyond-better-introducing-the-redmagic-11s-pro" target="_blank" rel="noopener">公式情報 ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="categories">
+      <div class="section-head">
+        <div><div class="eyebrow">EXPLORE / ガジェット全般</div><h2>GADGET CATEGORIES</h2></div>
+      </div>
+      <div class="trouble-grid gadget-category-grid">
+        <a href="#phones"><span>01</span><h3>スマートフォン</h3><p>iPhoneも中国メーカーも。カメラ・SoC・電池・UIまで。</p><b>PHONE →</b></a>
+        <a href="#community"><span>02</span><h3>オーディオ</h3><p>イヤホン、ヘッドホン、スピーカー。音の好みも普通に語る。</p><b>COMMUNITY →</b></a>
+        <a href="#community"><span>03</span><h3>PC / Tablet</h3><p>ノートPC、自作PC、iPad、Androidタブレットまで。</p><b>COMMUNITY →</b></a>
+        <a href="./"><span>04</span><h3>Robot / Smart Home</h3><p>Roombaなどロボット掃除機は専門ページで深掘り。</p><b>ROBOT →</b></a>
+      </div>
+    </section>
+
+    <section class="community shell" id="community">
+      <div class="community-inner">
+        <div class="eyebrow light">COMMUNITY / TEAM GADGET</div>
+        <h2>ガジェット好きなら、<br>話題はなんでも。</h2>
+        <p>スマホ、PC、オーディオ、AI、Roomba、雑談まで。Team Gadgetは、好きなものを気軽に持ち寄って話せるコミュニティです。</p>
+        <a class="join-button gadget-join" href="https://line.me/ti/g2/6YTxJleHIJ7dZ88OQ64XMH9MerU4rNsEn-E4BA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener">オープンチャットに参加する →</a>
+        <small>LINE オープンチャットで参加できます。</small>
+      </div>
+    </section>
+
+    <section class="team-credits shell" aria-label="Team Gadget 運営情報">
+      <div class="eyebrow">TEAM / CREDITS</div>
+      <div class="credit-grid">
+        <div class="credit-row"><span>FOUNDER / COMMUNITY ADMIN</span><strong>Team Gadget 発起人・オープンチャット管理</strong><b>へい</b></div>
+        <div class="credit-row"><span>WEBSITE</span><strong>サイト制作・運営</strong><b>おいも</b></div>
+      </div>
     </section>
   </main>
 
-  <footer class="tg-footer tg-shell">
-    <strong>Team Gadget</strong>
-    <span>Unofficial gadget community.</span>
-    <a href="./">Roomba Page →</a>
+  <footer class="footer shell">
+    <div><strong>Team Gadget</strong><span>ガジェットを、もっと知る。もっと楽しむ。</span></div>
+    <div class="footer-links"><a href="#phones">Phones</a><a href="#categories">Categories</a><a href="./">Robot ver</a><a href="#community">Community</a></div>
+    <small>© 2026 Team Gadget. Unofficial gadget community.</small>
   </footer>
+
+  <script>
+    (function(){
+      const button=document.getElementById("menuButton");
+      const menu=document.getElementById("mobileMenu");
+      if(!button||!menu)return;
+      button.addEventListener("click",()=>{
+        const open=button.getAttribute("aria-expanded")==="true";
+        button.setAttribute("aria-expanded",String(!open));
+        menu.hidden=open;
+      });
+      menu.addEventListener("click",e=>{
+        if(e.target.matches("a")){
+          menu.hidden=true;
+          button.setAttribute("aria-expanded","false");
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
