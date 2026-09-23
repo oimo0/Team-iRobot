@@ -685,3 +685,16 @@ img{max-width:100%;display:block}
  .gadget-page-switch small{display:block;margin-top:4px;max-width:220px}
  .gadget-page-switch strong{font-size:8px}
 }
+
+
+/* --- Unified hamburger drawer --- */
+.mobile-menu[hidden]{display:none!important}
+.mobile-menu{position:fixed!important;inset:0!important;z-index:90!important;background:rgba(17,19,21,.18)!important;padding:0!important}
+.mobile-menu-panel{position:absolute;right:0;top:0;width:min(88vw,380px);height:100%;padding:22px 22px 34px;background:#fff;box-shadow:-24px 0 60px rgba(0,0,0,.10);overflow:auto}
+.mobile-menu-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #111}
+.mobile-menu-head strong{font-size:11px;letter-spacing:.14em}
+.mobile-close{border:0;background:transparent;font-size:30px;line-height:1;padding:0 2px;cursor:pointer}
+.mobile-menu-group{padding:22px 0 2px}
+.mobile-menu-label{display:block;font-size:8px;font-weight:900;letter-spacing:.15em;color:#8a9192;margin-bottom:8px}
+.mobile-menu-group a{display:flex!important;align-items:center!important;min-height:50px!important;padding:0!important;border-bottom:1px solid var(--line)!important;font-size:17px!important;font-weight:760!important;letter-spacing:-.02em!important}
+.mobile-menu-group a:after{content:"→";margin-left:auto;font-size:14px;color:#8c9394}
