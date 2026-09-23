@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Team Gadget ガジェットニュース一覧。スマートフォンを中心に最新情報をまとめます。">
+  <title>ガジェットニュース | Team Gadget</title>
+  <link rel="stylesheet" href="./styles.css?v=20260923-1535">
+  <link rel="stylesheet" href="./gadget.css?v=20260923-1535">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./gadget.html"><span>Team Gadget</span></a>
+    <nav class="desktop-nav"><a href="./gadget.html">Home</a><a href="#news">News</a><a href="./phones.html">Phones</a><a href="./phones.html#compare">Compare</a></nav>
+    <button class="menu-button" id="menuButton" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-head"><strong>MENU</strong><button class="mobile-close" id="menuClose" type="button" aria-label="メニューを閉じる">×</button></div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-label">PAGES</span>
+        <a href="./gadget.html">Team Gadget</a>
+        <a href="./">Team Gadget（Robot ver）</a>
+      </div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-label">GADGET</span>
+        <a href="#news">News</a>
+        <a href="./phones.html">World Phones</a>
+        <a href="./phones.html#compare">Compare</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section shell page-top-section" id="news">
+      <a class="page-kicker" href="./gadget.html">← TEAM GADGET</a>
+      <div class="section-head">
+        <div><div class="eyebrow">READ / GADGET NEWS</div><h1 class="database-page-title">ALL<br>NEWS</h1></div>
+        <span class="source-note">メーカー公式情報中心 / 随時更新</span>
+      </div>
+      <div class="gadget-news-timeline standalone-news-list">
+        <div class="gadget-news-list" id="moreNewsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div><strong>Team Gadget</strong><span>GADGET NEWS</span></div>
+    <div class="footer-links"><a href="./gadget.html">Home</a><a href="./phones.html">Phones</a><a href="./">Robot ver</a></div>
+    <small>© 2026 Team Gadget.</small>
+  </footer>
+
+  <script src="./gadget-data.js?v=20260923-1535"></script>
+  <script src="./gadget.js?v=20260923-1535"></script>
+</body>
+</html>
