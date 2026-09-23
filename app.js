@@ -75,16 +75,24 @@ renderProducts();
 
 const menuButton = document.getElementById("menuButton");
 const mobileMenu = document.getElementById("mobileMenu");
+const menuClose = document.getElementById("menuClose");
+const closeMenu = () => {
+  mobileMenu.hidden = true;
+  menuButton.setAttribute("aria-expanded","false");
+  document.body.style.overflow = "";
+};
+const openMenu = () => {
+  mobileMenu.hidden = false;
+  menuButton.setAttribute("aria-expanded","true");
+  document.body.style.overflow = "hidden";
+};
 menuButton.addEventListener("click", () => {
   const open = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!open));
-  mobileMenu.hidden = open;
+  open ? closeMenu() : openMenu();
 });
+menuClose?.addEventListener("click", closeMenu);
 mobileMenu.addEventListener("click", e => {
-  if(e.target.matches("a")){
-    mobileMenu.hidden = true;
-    menuButton.setAttribute("aria-expanded","false");
-  }
+  if(e.target === mobileMenu || e.target.matches("a")) closeMenu();
 });
 
 const rail = document.getElementById("featureRail");
