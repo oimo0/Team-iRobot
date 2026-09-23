@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Startup Animation Showcase | Team iRobot</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;width:100%;height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7f7f5;color:#111;overflow:hidden}
+  #siteIntro{position:fixed;inset:0;z-index:1;background:#f7f7f5;overflow:hidden}
+  #siteIntro .intro-roomba-stage{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+  #siteIntro .intro-roomba-slot{position:absolute;bottom:-220px;opacity:0;will-change:transform,opacity}
+  #siteIntro .intro-roomba-slot img{display:block;width:100%;height:100%;object-fit:contain}
+  #siteIntro .intro-roomba-slot.is-fallback img{display:none}
+  #siteIntro .intro-roomba-slot.is-fallback:before{content:"";position:absolute;inset:12%;border-radius:50%;background:#25292a;box-shadow:inset 0 0 0 10px #34393a,0 18px 28px rgba(0,0,0,.12)}
+  #siteIntro .intro-roomba-slot.is-fallback:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#0ca678;left:50%;top:50%;transform:translate(-50%,-50%)}
+  #siteIntro .intro-roomba-slot span{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);font:900 8px/1 system-ui,sans-serif;letter-spacing:.12em;color:#6d7476;white-space:nowrap;background:rgba(247,247,245,.88);padding:3px 5px;border-radius:999px}
+  #siteIntro .r1{width:108px;height:108px;left:-3%}
+  #siteIntro .r2{width:132px;height:132px;left:11%}
+  #siteIntro .r3{width:174px;height:174px;left:29%}
+  #siteIntro .r4{width:144px;height:144px;left:56%}
+  #siteIntro .r5{width:162px;height:162px;left:72%}
+
+  #siteIntro.intro-rise .intro-roomba-slot{animation:tiRise .9s cubic-bezier(.16,.84,.28,1) forwards}
+  #siteIntro.intro-rise .r1{animation-delay:.05s}
+  #siteIntro.intro-rise .r2{animation-delay:.28s}
+  #siteIntro.intro-rise .r3{animation-delay:.51s}
+  #siteIntro.intro-rise .r4{animation-delay:.74s}
+  #siteIntro.intro-rise .r5{animation-delay:.97s}
+
+  #siteIntro.intro-center .r3{animation:tiCenterHero .82s cubic-bezier(.16,.84,.28,1) .08s forwards}
+  #siteIntro.intro-center .r1,#siteIntro.intro-center .r2{animation:tiFromLeft .82s cubic-bezier(.16,.84,.28,1) forwards}
+  #siteIntro.intro-center .r4,#siteIntro.intro-center .r5{animation:tiFromRight .82s cubic-bezier(.16,.84,.28,1) forwards}
+  #siteIntro.intro-center .r1{animation-delay:.48s}
+  #siteIntro.intro-center .r2{animation-delay:.70s}
+  #siteIntro.intro-center .r4{animation-delay:.70s}
+  #siteIntro.intro-center .r5{animation-delay:.48s}
+
+  #siteIntro.intro-pop .intro-roomba-slot{animation:tiPop .72s cubic-bezier(.2,1.25,.35,1) forwards}
+  #siteIntro.intro-pop .r1{animation-delay:.08s}
+  #siteIntro.intro-pop .r2{animation-delay:.28s}
+  #siteIntro.intro-pop .r3{animation-delay:.48s}
+  #siteIntro.intro-pop .r4{animation-delay:.68s}
+  #siteIntro.intro-pop .r5{animation-delay:.88s}
+
+  #siteIntro.intro-drop .r1,#siteIntro.intro-drop .r2,#siteIntro.intro-drop .r4,#siteIntro.intro-drop .r5{animation:tiRise .78s cubic-bezier(.16,.84,.28,1) forwards}
+  #siteIntro.intro-drop .r1{animation-delay:.05s}
+  #siteIntro.intro-drop .r2{animation-delay:.18s}
+  #siteIntro.intro-drop .r4{animation-delay:.31s}
+  #siteIntro.intro-drop .r5{animation-delay:.44s}
+  #siteIntro.intro-drop .r3{animation:tiDropHero 1.02s cubic-bezier(.18,.86,.26,1) 1.12s forwards;z-index:4}
+
+  #siteIntro .intro-roomba-title{position:absolute;left:50%;top:11vh;transform:translateX(-50%) translateY(-10px);text-align:center;opacity:0;animation:tiTitle .35s ease 1.85s forwards;z-index:5;pointer-events:none}
+  #siteIntro.intro-center .intro-roomba-title{animation-delay:1.75s}
+  #siteIntro.intro-pop .intro-roomba-title{animation-delay:1.70s}
+  #siteIntro.intro-drop .intro-roomba-title{animation-delay:2.28s}
+  #siteIntro .intro-roomba-title small{display:block;font:800 8px/1.2 system-ui,sans-serif;letter-spacing:.18em;color:#747b7d;margin-bottom:9px}
+  #siteIntro .intro-roomba-title strong{display:block;font:900 38px/.9 system-ui,sans-serif;letter-spacing:-.055em;color:#111}
+
+  @keyframes tiRise{0%{opacity:0;transform:translateY(0) scale(.78)}60%{opacity:1;transform:translateY(-40vh) scale(1.05)}100%{opacity:1;transform:translateY(-38vh) scale(1)}}
+  @keyframes tiTitle{to{opacity:1;transform:translateX(-50%) translateY(0)}}
+  @keyframes tiCenterHero{0%{opacity:0;transform:translateY(-38vh) scale(.15) rotate(-8deg)}65%{opacity:1;transform:translateY(-38vh) scale(1.08) rotate(2deg)}100%{opacity:1;transform:translateY(-38vh) scale(1) rotate(0)}}
+  @keyframes tiFromLeft{0%{opacity:0;transform:translate(-70vw,-38vh) scale(.9)}100%{opacity:1;transform:translate(0,-38vh) scale(1)}}
+  @keyframes tiFromRight{0%{opacity:0;transform:translate(70vw,-38vh) scale(.9)}100%{opacity:1;transform:translate(0,-38vh) scale(1)}}
+  @keyframes tiPop{0%{opacity:0;transform:translateY(-38vh) scale(.05) rotate(-10deg)}72%{opacity:1;transform:translateY(-38vh) scale(1.12) rotate(2deg)}100%{opacity:1;transform:translateY(-38vh) scale(1) rotate(0)}}
+  @keyframes tiDropHero{0%{opacity:0;transform:translateY(-125vh) scale(.9) rotate(-3deg)}66%{opacity:1;transform:translateY(-34vh) scale(1.04) rotate(1deg)}82%{opacity:1;transform:translateY(-41vh) scale(.98)}100%{opacity:1;transform:translateY(-38vh) scale(1)}}
+
+  .showcase-back,.showcase-controls{position:fixed;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+  .showcase-back{top:18px;left:18px;padding:11px 14px;border-radius:999px;color:#111;text-decoration:none;font-size:11px;font-weight:800}
+  .showcase-controls{left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:7px;padding:8px;border-radius:18px;max-width:calc(100vw - 24px);overflow:auto}
+  .showcase-controls button{border:0;background:#f0f1f1;color:#111;border-radius:12px;padding:10px 12px;white-space:nowrap;font:800 10px/1 system-ui,sans-serif;cursor:pointer}
+  .showcase-controls button.active{background:#111;color:#fff}
+  .showcase-label{position:fixed;z-index:20;right:18px;top:18px;font:900 9px/1 system-ui,sans-serif;letter-spacing:.13em;color:#777}
+
+  @media(min-width:901px){
+    #siteIntro .r1{width:180px;height:180px;left:1%}
+    #siteIntro .r2{width:220px;height:220px;left:18%}
+    #siteIntro .r3{width:290px;height:290px;left:39%}
+    #siteIntro .r4{width:235px;height:235px;left:62%}
+    #siteIntro .r5{width:265px;height:265px;left:78%}
+    #siteIntro .intro-roomba-title{top:10vh}
+    #siteIntro .intro-roomba-title strong{font-size:58px}
+    @keyframes tiRise{0%{opacity:0;transform:translateY(0) scale(.8)}60%{opacity:1;transform:translateY(-46vh) scale(1.04)}100%{opacity:1;transform:translateY(-43vh) scale(1)}}
+    @keyframes tiCenterHero{0%{opacity:0;transform:translateY(-43vh) scale(.15) rotate(-8deg)}65%{opacity:1;transform:translateY(-43vh) scale(1.08) rotate(2deg)}100%{opacity:1;transform:translateY(-43vh) scale(1)}}
+    @keyframes tiFromLeft{0%{opacity:0;transform:translate(-70vw,-43vh) scale(.9)}100%{opacity:1;transform:translate(0,-43vh) scale(1)}}
+    @keyframes tiFromRight{0%{opacity:0;transform:translate(70vw,-43vh) scale(.9)}100%{opacity:1;transform:translate(0,-43vh) scale(1)}}
+    @keyframes tiPop{0%{opacity:0;transform:translateY(-43vh) scale(.05) rotate(-10deg)}72%{opacity:1;transform:translateY(-43vh) scale(1.12) rotate(2deg)}100%{opacity:1;transform:translateY(-43vh) scale(1)}}
+    @keyframes tiDropHero{0%{opacity:0;transform:translateY(-135vh) scale(.9) rotate(-3deg)}66%{opacity:1;transform:translateY(-39vh) scale(1.04) rotate(1deg)}82%{opacity:1;transform:translateY(-46vh) scale(.98)}100%{opacity:1;transform:translateY(-43vh) scale(1)}}
+  }
+</style>
+</head>
+<body>
+<a class="showcase-back" href="./">← SITE</a>
+<div class="showcase-label">ARCHIVED STARTUP / SHOWCASE</div>
+
+<div class="site-intro-roomba" id="siteIntro" aria-label="起動アニメーション展示">
+  <div class="intro-roomba-stage">
+    <div class="intro-roomba-slot r1"><img src="https://www.irobot-jp.com/product/img/family/260219/roomba-min-sc_wh.png" alt="" onerror="this.parentElement.classList.add('is-fallback')"><span>MINI</span></div>
+    <div class="intro-roomba-slot r2"><img src="https://store.irobot-jp.com/client_info/FS/itemimage/Y351060.jpg" alt="" onerror="this.parentElement.classList.add('is-fallback')"><span>105</span></div>
+    <div class="intro-roomba-slot r3"><img src="https://www.irobot.co.uk/dw/image/v2/BFXP_PRD/on/demandware.static/-/Library-Sites-iRobotSharedLibrary/default/dw466c504b/EMEA/2026/615/Roomba_Plus_615_Combo_WashOnly_Black_Photo_In-situ_PowerSpinRollerMop_DTC_3000x3000.jpg?fmt=auto&sw=1000" alt="" onerror="this.parentElement.classList.add('is-fallback')"><span>PLUS 615</span></div>
+    <div class="intro-roomba-slot r4"><img src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-715-ae-image.png" alt="" onerror="this.parentElement.classList.add('is-fallback')"><span>MAX 715</span></div>
+    <div class="intro-roomba-slot r5"><img src="https://www.irobot-jp.com/product/img/family/260717/roomba-max-775-aw-image.png" alt="" onerror="this.parentElement.classList.add('is-fallback')"><span>MAX 775</span></div>
+  </div>
+  <div class="intro-roomba-title"><small>ROOMBA LINEUP / TEAM IROBOT</small><strong>READY.</strong></div>
+</div>
+
+<div class="showcase-controls" aria-label="演出を選択">
+  <button type="button" data-variant="random">RANDOM</button>
+  <button type="button" data-variant="intro-rise">01 RISE</button>
+  <button type="button" data-variant="intro-center">02 CENTER</button>
+  <button type="button" data-variant="intro-pop">03 POP</button>
+  <button type="button" data-variant="intro-drop">04 DROP 615</button>
+</div>
+
+<script>
+(function(){
+  const intro=document.getElementById("siteIntro");
+  const variants=["intro-rise","intro-center","intro-pop","intro-drop"];
+  const buttons=[...document.querySelectorAll("[data-variant]")];
+
+  function play(requested){
+    let variant=requested;
+    if(requested==="random"){
+      const current=variants.find(v=>intro.classList.contains(v));
+      const pool=variants.filter(v=>v!==current);
+      variant=pool[Math.floor(Math.random()*pool.length)]||variants[0];
+    }
+    intro.classList.remove(...variants);
+    void intro.offsetWidth;
+    intro.classList.add(variant);
+    buttons.forEach(b=>b.classList.toggle("active",b.dataset.variant===variant));
+  }
+
+  buttons.forEach(b=>b.addEventListener("click",()=>play(b.dataset.variant)));
+  play("random");
+})();
+</script>
+</body>
+</html>
