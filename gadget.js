@@ -50,9 +50,11 @@
   }
 
   function renderPhones(){
-    const rows=filtered();
     const grid=$("#worldPhoneGrid");
-    $("#phoneCount").textContent=rows.length+" MODELS";
+    if(!grid) return;
+    const rows=filtered();
+    const count=$("#phoneCount");
+    if(count) count.textContent=rows.length+" MODELS";
     grid.innerHTML=rows.slice(0,state.visible).map(p=>{
       const selected=state.compare.includes(p.id);
       return '<article class="world-phone-card">'+
@@ -65,14 +67,17 @@
         '<a class="world-phone-link" href="'+esc(p.url)+'" target="_blank" rel="noopener">公式情報 ↗</a>'+
       '</article>';
     }).join("");
-    $("#loadMorePhones").hidden=state.visible>=rows.length;
-    $("#emptyPhones").hidden=rows.length>0;
+    const more=$("#loadMorePhones"), empty=$("#emptyPhones");
+    if(more) more.hidden=state.visible>=rows.length;
+    if(empty) empty.hidden=rows.length>0;
   }
 
   function renderCompare(){
     const panel=$("#comparePanel");
+    if(!panel) return;
     const rows=state.compare.map(id=>phones.find(p=>p.id===id)).filter(Boolean);
-    $("#compareCount").textContent=rows.length+"/4";
+    const count=$("#compareCount");
+    if(count) count.textContent=rows.length+"/4";
     if(rows.length<2){
       panel.innerHTML='<div class="compare-empty">一覧の「比較 +」から2〜4台選ぶと、ここに比較表が出ます。</div>';
       return;
@@ -99,7 +104,13 @@
     const id=b.dataset.compare;
     if(state.compare.includes(id)) state.compare=state.compare.filter(x=>x!==id);
     else if(state.compare.length<4) state.compare.push(id);
-    else {$("#compareNotice").textContent="比較は最大4台までです。";setTimeout(()=>$("#compareNotice").textContent="",1800)}
+    else {
+      const notice=$("#compareNotice");
+      if(notice){
+        notice.textContent="比較は最大4台までです。";
+        setTimeout(()=>notice.textContent="",1800);
+      }
+    }
     renderPhones();renderCompare();
   });
   $("#comparePanel")?.addEventListener("click",e=>{
