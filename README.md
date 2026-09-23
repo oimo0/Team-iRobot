@@ -52,3 +52,5 @@ const OPENCHAT_URL = "ここにURL";
 Team iRobotは iRobot Corporation およびアイロボットジャパン合同会社の公式サイトではない、独立したファンコミュニティです。
 
 iRobot、Roomba、Braava等の名称・商標は各権利者に帰属します。製品写真はアイロボットジャパン公式サイト上の公開画像を参照しています。
+
+<!-- pages-redeploy: 2026-09-23T15:10+09:00 -->
