@@ -34,4 +34,4 @@ jobs:
           test -f phones/index.html
           test -f news/index.html
           grep -q 'id="productGrid"' index.html
-          grep -Fq 'Team Gadget（Robot ver）' index.html
+          grep -Fq 'Team Gadget（Roomba）' index.html
