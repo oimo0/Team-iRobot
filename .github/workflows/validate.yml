@@ -23,4 +23,4 @@ jobs:
           test -f styles.css
           test -f app.js
           grep -q 'id="productGrid"' index.html
-          grep -q 'Team iRobot' index.html
+          grep -Fq 'Team Gadget（Robot ver）' index.html
