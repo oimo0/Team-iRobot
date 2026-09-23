@@ -31,5 +31,7 @@ jobs:
           test -f gadget-data.js
           test -f phones.html
           test -f gadget-news.html
+          test -f phones/index.html
+          test -f news/index.html
           grep -q 'id="productGrid"' index.html
           grep -Fq 'Team Gadget（Robot ver）' index.html
