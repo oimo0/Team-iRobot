@@ -15,7 +15,7 @@ window.TEAM_IROBOT_PRODUCTS = [
     navigation:"ClearView Pro Dual-Line LiDAR",
     obstacle:"PrecisionVision AI",
     bestFor:"最新の最上位・水拭きとお手入れの自動化",
-    official:"https://www.irobot-jp.com/monster/"
+    official:"https://store.irobot-jp.com/item/Z183060.html"
   },
   {
     id:"mini-autoempty",
