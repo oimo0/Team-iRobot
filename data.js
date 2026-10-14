@@ -1,6 +1,23 @@
 
 window.TEAM_IROBOT_PRODUCTS = [
   {
+    id:"max-875",
+    name:"Roomba Max 875 Combo（Roomba Monster）",
+    short:"Roomba Monster",
+    family:"Monster",
+    year:2026,
+    image:"https://www.irobot.com/dw/image/v2/BFXP_PRD/on/demandware.static/-/Library-Sites-iRobotSharedLibrary/default/dwb4acc6a9/North-America/Content-Asset-Images/PDP-Images/Combo/Z185020/Roomba_Max_875_Combo_AutoWash_Black_Photo_Insitu_Dock_DTC_3000x3000_fr-CA.jpg?fmt=auto&sw=2880",
+    tags:["combo","autowash","autoempty"],
+    summary:"2026年10月14日発表、10月21日発売予定。60℃温水ミスト、PowerSpin Maxローラーモップ、80℃モップ温水洗浄・55℃温風乾燥。公式価格249,800円（税込、発表時）。",
+    suction:"Roomba Plus 505比 最大5倍",
+    mop:"ThermaMist（60℃）/ PowerSpin Max",
+    dock:"AutoWash（80℃洗浄・55℃乾燥）",
+    navigation:"ClearView Pro Dual-Line LiDAR",
+    obstacle:"PrecisionVision AI",
+    bestFor:"最新の最上位・水拭きとお手入れの自動化",
+    official:"https://www.irobot-jp.com/monster/"
+  },
+  {
     id:"mini-autoempty",
     name:"Roomba Mini + AutoEmpty",
     short:"Roomba Mini",
@@ -84,23 +101,6 @@ window.TEAM_IROBOT_PRODUCTS = [
     obstacle:"物体検知",
     bestFor:"コンパクトさと自動メンテナンス",
     official:"https://store.irobot-jp.com/category/ROOMBA/N285060.html"
-  },
-  {
-    id:"plus-615",
-    name:"Roomba Plus 615 Combo",
-    short:"Plus 615",
-    family:"Plus",
-    year:2026,
-    image:"https://www.irobot.co.uk/dw/image/v2/BFXP_PRD/on/demandware.static/-/Library-Sites-iRobotSharedLibrary/default/dw466c504b/EMEA/2026/615/Roomba_Plus_615_Combo_WashOnly_Black_Photo_In-situ_PowerSpinRollerMop_DTC_3000x3000.jpg?fmt=auto&sw=1000",
-    tags:["combo","autowash"],
-    summary:"2段階水拭き、PowerSpinローラーモップ、最大30,000Pa吸引を組み合わせた2026年の高機能Plusモデル。",
-    suction:"最大30,000Pa",
-    mop:"PowerSpinローラーモップ / SprayForce AI",
-    dock:"Wash Only Dock",
-    navigation:"ClearView Pro LiDAR",
-    obstacle:"PrecisionVision AI",
-    bestFor:"水拭き性能・障害物回避を重視",
-    official:"https://store.shopping.yahoo.co.jp/irobotstore-jp/v184060.html"
   },
   {
     id:"max-775",
