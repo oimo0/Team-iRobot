@@ -6,7 +6,7 @@ window.TEAM_IROBOT_PRODUCTS = [
     short:"Roomba Monster",
     family:"Monster",
     year:2026,
-    image:"https://www.irobot.com/dw/image/v2/BFXP_PRD/on/demandware.static/-/Library-Sites-iRobotSharedLibrary/default/dwb4acc6a9/North-America/Content-Asset-Images/PDP-Images/Combo/Z185020/Roomba_Max_875_Combo_AutoWash_Black_Photo_Insitu_Dock_DTC_3000x3000_fr-CA.jpg?fmt=auto&sw=2880",
+    image:"https://prcdn.freetls.fastly.net/release_image/25142/164/25142-164-378e3327d9558de5a7f647b0697eee6c-2048x2048.jpg?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=1350&quality=85%2C65&width=1950",
     tags:["combo","autowash","autoempty"],
     summary:"2026年10月14日発表、10月21日発売予定。60℃温水ミスト、PowerSpin Maxローラーモップ、80℃モップ温水洗浄・55℃温風乾燥。公式価格249,800円（税込、発表時）。",
     suction:"Roomba Plus 505比 最大5倍",

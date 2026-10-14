@@ -698,3 +698,64 @@ img{max-width:100%;display:block}
 .mobile-menu-label{display:block;font-size:8px;font-weight:900;letter-spacing:.15em;color:#8a9192;margin-bottom:8px}
 .mobile-menu-group a{display:flex!important;align-items:center!important;min-height:50px!important;padding:0!important;border-bottom:1px solid var(--line)!important;font-size:17px!important;font-weight:760!important;letter-spacing:-.02em!important}
 .mobile-menu-group a:after{content:"→";margin-left:auto;font-size:14px;color:#8c9394}
+
+
+/* 2026-10-14: official Roomba Monster studio shot & mobile news readability */
+.news-visual.monster-product-visual {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  background: #fff;
+  overflow: hidden;
+}
+.news-visual.monster-product-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.news-list a strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 560px) {
+  .news-grid { min-width: 0; }
+  .news-lead { padding: 26px 0 27px; min-width: 0; }
+  .news-lead h3 {
+    font-size: clamp(26px, 7.3vw, 32px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  .news-lead p { line-height: 1.75; margin-bottom: 0; }
+  .news-visual.monster-product-visual {
+    aspect-ratio: 4 / 3;
+    margin-bottom: 20px;
+  }
+  .news-list { min-width: 0; }
+  .news-list a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 32px;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 7px;
+    min-height: 0;
+    padding: 20px 0 22px;
+  }
+  .news-list a span {
+    display: block;
+    grid-column: 1 / -1;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .news-list a strong {
+    grid-column: 1;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .news-list a em {
+    grid-column: 2;
+    justify-self: end;
+    white-space: nowrap;
+  }
+}

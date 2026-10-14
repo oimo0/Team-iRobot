@@ -214,3 +214,14 @@
     aspect-ratio:976 / 676!important;
   }
 }
+
+
+/* 2026-10-14: use a white studio background for official Roomba Monster art */
+.gadget-news-visual.monster-product-visual {
+  background: #fff !important;
+  aspect-ratio: 4 / 3 !important;
+}
+.gadget-news-visual.monster-product-visual img {
+  object-fit: contain !important;
+  object-position: center !important;
+}
